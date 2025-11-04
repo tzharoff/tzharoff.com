@@ -96,7 +96,7 @@ export default function CoryDSResume() {
         </div>
         {/* Footer label */}
         <div className="mt-2 flex items-center justify-center gap-2 text-xs tracking-widest text-slate-600 print:hidden">
-          <span className="font-semibold">NINTENDO‑STYLE RESUMÉ UI</span>
+          <span className="font-semibold">TZHAROFF.COM</span>
           <span>•</span>
           <span>PRINT ➜ SAVE AS PDF (LETTER)</span>
         </div>
