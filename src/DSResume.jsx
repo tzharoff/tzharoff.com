@@ -120,7 +120,7 @@ function TopScreen() {
         <div className="col-span-2">
           <div className="aspect-[3/4] overflow-hidden rounded-xl border border-white/20 bg-gradient-to-b from-blue-700 to-blue-900">
             {/* Placeholder portrait */}
-            <div className="flex h-full items-center justify-center text-white/80"><img src={profilePic} />"</div>
+            <div className="flex h-full items-center justify-center text-white/80"><img src={profilePic} alt="Tony Zharoff Cartoon Profile Picture"/></div>
           </div>
         </div>
 
