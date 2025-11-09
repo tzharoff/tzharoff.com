@@ -18,46 +18,59 @@ const DATA = {
   phone: "+1 (253) 223–8069",
   email: "tony.zharoff@gmail.com",
   site: "tzharoff.com",
-  location: "Seattle, WA",
+  location: "Sumner, WA",
   summary:
     "Designer/developer blending rapid prototyping with playful, family‑friendly sensibilities. Ships vertical slices, mentors teams, and builds memorable interactive experiences.",
   skills: [
-    { label: "Unity / C#", level: 95 },
+    { label: "Unity", level: 95 },
     { label: "Prototyping", level: 95 },
-    { label: "Project Management", level: 90 },
+    { label: "Project Management", level: 95 },
+    { label: "Instructional Design", level:90 },
     { label: "Level Design", level: 90 },
+    { label: "C#", level: 85 },
     { label: "VR/AR (XR)", level: 85 },
     { label: "C++ Basics", level: 70 },
     { label: "Blender", level: 75 },
   ],
   links: [
     { label: "LinkedIn", value: "linkedin.com/in/tzharoff" },
-    { label: "GitHub", value: "github.com/tony" },
+    { label: "GitHub", value: "github.com/tzharoff" },
     { label: "Portfolio", value: "tzharoff.com" },
   ],
   education: [
     {
       school: "WGU — B.S. Software Development",
-      year: "2023",
+      year: "2020",
     },
     {
       school: "ITT Tech — B.A. Game Design",
-      year: "2010",
+      year: "2006",
     },
   ],
   experience: [
     {
       company: "[P1] Games (Volunteer Mentor)",
-      years: "2024–Present",
+      years: "2023–Present",
       points: [
         "Led teams to ship award‑winning prototypes and improve schedules.",
         "Answered dev questions and embedded industry practices.",
       ],
     },
     {
-      company: "Coding Dojo — Unity/C# Instructor",
-      years: "2022–2023",
+      company: "Wiley Edge",
+      years: "2022-2023",
       points: [
+        "Curriculum Curation",
+        "iOS Development",
+        "SRE, DevOps, CI/CD",
+      ],
+
+    },
+    {
+      company: "Coding Dojo — Lead Unity Instructor",
+      years: "2021–2022",
+      points: [
+        "Curated Curriculum",
         "Taught fundamentals, design patterns, and project delivery.",
         "Guided capstone teams through vertical slices.",
       ],
@@ -66,14 +79,25 @@ const DATA = {
       company: "Cerulean Games / Iron Belly / Cypher Kids Club — Unity Dev",
       years: "2011–2014",
       points: [
-        "R&D prototypes for AR/interactive experiences with major brands.",
+        "R&D prototypes for AR/interactive experiences with major brands (DisneyJunior, UnderArmour).",
         "Multi‑user experiences, performance tuning, asset pipelines.",
       ],
     },
     {
-        company: "blah",
-        years: "xxxx-yyyy",
-        points: ["#1", "#2"],
+        company: "ITT Tehchnical Institute",
+        years: "2009-2011",
+        points: [
+          "Taught Game Development", 
+          "Led teams through full development cycles",
+        ],
+    },
+    {
+        company: "Handheld Games",
+        years: "2007-2008",
+        points: [
+          "Game Document Master",
+          "Tools design",
+        ],
     },
   ],
   awards: [
