@@ -724,7 +724,7 @@ export const skillTreeNodes: SkillNode[] = [
     description:
       "Gameplay prototypes, progression loops, enemy behavior, game-feel experiments, and readable player-facing systems.",
     Icon: Swords,
-    x: 15,
+    x: 22,
     y: 58,
     tier: "branch",
     abilities: [
@@ -741,7 +741,7 @@ export const skillTreeNodes: SkillNode[] = [
     description:
       "Project-based lessons, technical mentoring, and learning paths that help people build confidence through visible progress.",
     Icon: GraduationCap,
-    x: 32,
+    x: 36,
     y: 80,
     tier: "branch",
     abilities: [
@@ -758,7 +758,7 @@ export const skillTreeNodes: SkillNode[] = [
     description:
       "Frontend systems, internal tools, dashboards, and small-business websites built around clarity and useful action.",
     Icon: Code2,
-    x: 68,
+    x: 64,
     y: 80,
     tier: "branch",
     abilities: [
@@ -781,7 +781,7 @@ export const skillTreeNodes: SkillNode[] = [
     description:
       "Workflow mapping, operational clarity, knowledge structures, and decision systems for complex real-world problems.",
     Icon: Wrench,
-    x: 85,
+    x: 78,
     y: 58,
     tier: "branch",
     abilities: [

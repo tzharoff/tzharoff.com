@@ -117,11 +117,15 @@ export function SkillTreePreview({ preview = false }: SkillTreePreviewProps) {
                       to={`/quest-log/${quest.slug}`}
                       aria-label={`Open related quest ${quest.number}: ${quest.title}`}
                     >
-                      <span className="quest-number">{quest.number}</span>
-                      <strong>{quest.title}</strong>
-                      <span>{quest.category}</span>
-                      <span className={`status-badge ${statusClass[quest.status]}`}>{quest.status}</span>
-                      <ArrowUpRight size={15} aria-hidden="true" />
+                      <div className="related-quest-topline">
+                        <span className="quest-number">{quest.number}</span>
+                        <span className={`status-badge ${statusClass[quest.status]}`}>{quest.status}</span>
+                      </div>
+                      <h5>{quest.title}</h5>
+                      <div className="related-quest-footer">
+                        <span className="quest-category">{quest.category}</span>
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                      </div>
                     </Link>
                   ))}
                 </div>

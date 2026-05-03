@@ -1112,33 +1112,50 @@ footer {
 }
 
 .related-quest-card {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
-  gap: 0.65rem;
-  align-items: center;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.75rem;
   border: 1px solid rgba(66, 242, 221, 0.14);
   border-radius: 8px;
   background: rgba(66, 242, 221, 0.055);
-  padding: 0.68rem 0.75rem;
+  padding: 0.85rem 0.9rem;
   color: #d8e4f4;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
-.related-quest-card strong {
+.related-quest-topline,
+.related-quest-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.related-quest-card h5 {
+  margin: 0;
   color: #fff7df;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-weight: 800;
+  line-height: 1.32;
 }
 
-.related-quest-card > span:nth-of-type(2) {
-  color: var(--cyan);
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
+.related-quest-footer .quest-category {
+  margin: 0;
+  line-height: 1;
+}
+
+.related-quest-footer svg {
+  flex: 0 0 auto;
+  color: #d8e4f4;
 }
 
 .related-quest-card:hover {
   transform: translateY(-2px);
   border-color: rgba(66, 242, 221, 0.46);
   background: rgba(66, 242, 221, 0.1);
+  box-shadow: 0 0 24px rgba(66, 242, 221, 0.1);
 }
 
 .compact-related p {
@@ -1225,15 +1242,6 @@ footer {
 
   .skill-detail-panel {
     min-height: auto;
-  }
-
-  .related-quest-card {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-  }
-
-  .related-quest-card > span:nth-of-type(2),
-  .related-quest-card .status-badge {
-    grid-column: 2 / -1;
   }
 
   .skill-node {
