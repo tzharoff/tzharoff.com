@@ -4,11 +4,14 @@ import {
   Code2,
   Compass,
   Crown,
+  FileText,
+  FlaskConical,
   Github,
   GraduationCap,
   Linkedin,
   Mail,
   Map,
+  PenTool,
   Route,
   ScrollText,
   ShieldCheck,
@@ -22,13 +25,31 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export type QuestStatus = "Active" | "Completed" | "Prototype";
+export type QuestCategory =
+  | "Main Quest"
+  | "Game Dev"
+  | "Teaching"
+  | "Toolsmith"
+  | "Mentorship"
+  | "Writing"
+  | "Experiment";
 
 export type Quest = {
+  slug: string;
   number: string;
   title: string;
-  category: string;
+  category: QuestCategory;
   status: QuestStatus;
   description: string;
+  objective: string;
+  role: string;
+  tools: string[];
+  obstacles: string[];
+  solution: string[];
+  rewards: string[];
+  unlockedSkills: string[];
+  tags: string[];
+  featured?: boolean;
   Icon: LucideIcon;
 };
 
@@ -51,38 +72,323 @@ export const navItems = [
 
 export const coreSkills = ["Unity", "React", "Firebase", "UX", "Curriculum", "Systems"];
 
+export const questFilters = [
+  "All",
+  "Main Quest",
+  "Game Dev",
+  "Teaching",
+  "Toolsmith",
+  "Mentorship",
+  "Writing",
+  "Experiment",
+] as const;
+
+export type QuestFilter = (typeof questFilters)[number];
+
 export const quests: Quest[] = [
   {
+    slug: "waypoint",
     number: "Q-01",
     title: "Waypoint",
-    category: "Operations Tool",
+    category: "Main Quest",
     status: "Active",
     description: "Build a source of truth for dispatch, vehicles, routes, and handoffs.",
+    objective:
+      "Build a source of truth for dispatch, vehicles, routes, gas cards, keys, wave cards, and nightly handoffs.",
+    role: "Product Designer, Developer, Technical Business Analyst",
+    tools: ["React", "TypeScript", "Firebase", "Firestore", "Tailwind", "Workflow mapping"],
+    obstacles: [
+      "Information spread across multiple documents and people",
+      "Operational data drift across shifts and tools",
+      "Night-shift and day-shift handoff gaps",
+    ],
+    solution: [
+      "Centralize operational records into one quick-scan interface",
+      "Create status cards and route views that mirror real dispatch decisions",
+      "Model dispatch objects like routes, trucks, keys, gas cards, wave cards, and call logs",
+    ],
+    rewards: [
+      "Clearer nightly handoffs",
+      "Better visibility into operational status",
+      "A stronger foundation for a source-of-truth operating system",
+    ],
+    unlockedSkills: ["Systems design", "Operational UX", "Firebase data modeling", "Workflow simplification"],
+    tags: ["React", "Firebase", "Operations", "Dispatch", "Source of truth"],
+    featured: true,
     Icon: Route,
   },
   {
+    slug: "one-line-academy",
     number: "Q-02",
     title: "One Line Academy",
-    category: "Education",
+    category: "Teaching",
     status: "Active",
     description: "Teach game development through approachable, hands-on learning.",
+    objective:
+      "Create an approachable learning path that helps beginners understand game development by building small, playable things.",
+    role: "Instructor, Curriculum Designer, Unity Mentor",
+    tools: ["Unity", "C#", "Lesson planning", "Video instruction", "Project-based learning", "Student feedback"],
+    obstacles: [
+      "New developers can get overwhelmed by abstract systems before they see progress",
+      "Tutorials often skip the reasoning behind design and code choices",
+      "Learners need wins that feel real without hiding the craft",
+    ],
+    solution: [
+      "Break concepts into compact lessons with immediate playable outcomes",
+      "Use plain-language explanations that connect code, design, and player experience",
+      "Design exercises that scale from first mechanics into stronger production habits",
+    ],
+    rewards: [
+      "More confident beginners",
+      "Reusable teaching patterns for future courses",
+      "A learning brand grounded in clarity, momentum, and craft",
+    ],
+    unlockedSkills: ["Curriculum design", "Unity instruction", "Technical communication", "Learning experience design"],
+    tags: ["Unity", "C#", "Curriculum", "Beginner education", "Video lessons"],
+    featured: true,
     Icon: GraduationCap,
   },
   {
+    slug: "p1-games-mentorship",
     number: "Q-03",
     title: "P1 Games Mentorship",
     category: "Mentorship",
     status: "Completed",
     description: "Guide teams toward stronger production habits and better outcomes.",
+    objective:
+      "Support student and early-career teams as they turn game ideas into scoped, playable, presentable projects.",
+    role: "Mentor, Production Coach, Design Reviewer",
+    tools: ["Unity", "Production rituals", "Playtesting", "Feedback frameworks", "Milestone planning"],
+    obstacles: [
+      "Teams often start with ambition larger than their production capacity",
+      "Unclear ownership can slow progress and blur accountability",
+      "Feedback needs to be honest without crushing momentum",
+    ],
+    solution: [
+      "Help teams reduce ideas into playable cores and visible milestones",
+      "Guide production habits around ownership, prioritization, and iteration",
+      "Translate critique into concrete next actions teams could actually execute",
+    ],
+    rewards: [
+      "Sharper project scopes",
+      "Healthier team production patterns",
+      "Better final presentations and stronger learning outcomes",
+    ],
+    unlockedSkills: ["Mentorship", "Production strategy", "Design critique", "Team facilitation"],
+    tags: ["Mentorship", "Production", "Team process", "Game design", "Feedback"],
+    featured: true,
     Icon: Trophy,
   },
   {
+    slug: "brain-plunder",
     number: "Q-04",
     title: "Brain Plunder",
     category: "Game Dev",
     status: "Prototype",
     description: "A cartoony zombie pirate clicker adventure with crew-building systems.",
+    objective:
+      "Prototype a playful zombie pirate clicker where progression, crew collection, and upgrades create a satisfying loop.",
+    role: "Game Designer, Unity Developer, Systems Designer",
+    tools: ["Unity", "C#", "Game economy design", "Prototype art direction", "Progression systems"],
+    obstacles: [
+      "Clicker systems need simple rules that still feel rewarding over time",
+      "The theme needed to stay funny and readable instead of noisy",
+      "Crew and upgrade systems had to add depth without slowing the core loop",
+    ],
+    solution: [
+      "Define a compact core loop around plundering, upgrading, and crew growth",
+      "Use cartoony tone and readable feedback to keep interactions light",
+      "Prototype upgrade paths that could expand into a larger idle adventure structure",
+    ],
+    rewards: [
+      "A distinctive game concept with clear progression hooks",
+      "Reusable thinking around idle/clicker economies",
+      "A prototype foundation for future systems and visual polish",
+    ],
+    unlockedSkills: ["Progression design", "Unity prototyping", "Game economy tuning", "Playful theme development"],
+    tags: ["Unity", "Prototype", "Idle systems", "Progression", "Game economy"],
+    featured: true,
     Icon: Brain,
+  },
+  {
+    slug: "portfolio-codex",
+    number: "Q-05",
+    title: "Portfolio Codex",
+    category: "Toolsmith",
+    status: "Active",
+    description: "Shape a personal site into a navigable RPG-inspired portfolio system.",
+    objective:
+      "Turn a personal portfolio into a structured, memorable interface that communicates projects, skills, and identity quickly.",
+    role: "Frontend Developer, UX Designer, Content Systems Designer",
+    tools: ["React", "TypeScript", "Tailwind", "React Router", "Lucide", "Responsive design"],
+    obstacles: [
+      "Game-inspired presentation can become gimmicky if navigation stops feeling normal",
+      "Portfolio content needs hierarchy without flattening the personality",
+      "Reusable components need to support future pages and deeper case studies",
+    ],
+    solution: [
+      "Create a routed site structure around Main Menu, Quest Log, Skill Tree, Codex, and Character Sheet",
+      "Build reusable panels, quest cards, and profile elements with consistent visual rules",
+      "Use the game metaphor as organization and tone rather than hiding information behind mechanics",
+    ],
+    rewards: [
+      "A distinctive first impression",
+      "Expandable structure for more projects and writing",
+      "A portfolio that feels personal while staying professional",
+    ],
+    unlockedSkills: ["Design systems", "React routing", "Content architecture", "Interactive portfolio UX"],
+    tags: ["Portfolio", "React", "Design system", "Routing", "Game UI"],
+    Icon: Code2,
+  },
+  {
+    slug: "handoff-playbook",
+    number: "Q-06",
+    title: "Handoff Playbook",
+    category: "Writing",
+    status: "Prototype",
+    description: "Document repeatable handoff rituals for operational teams with messy shift boundaries.",
+    objective:
+      "Create a practical writing system for cleaner nightly updates, fewer missed details, and better cross-shift continuity.",
+    role: "Technical Writer, Process Mapper, Operations Analyst",
+    tools: ["Process documentation", "Workflow mapping", "Checklists", "Plain-language writing"],
+    obstacles: [
+      "Critical operational knowledge often lives in memory or chat threads",
+      "Teams need documentation that is fast enough to use during real work",
+      "Shift handoffs can bury exceptions, risks, and next actions",
+    ],
+    solution: [
+      "Turn recurring handoff details into a reusable brief format",
+      "Separate status, blockers, exceptions, and next actions into quick-scan sections",
+      "Write templates that support accountability without adding heavy admin work",
+    ],
+    rewards: [
+      "Cleaner shift transitions",
+      "Less dependency on tribal knowledge",
+      "Reusable writing patterns for operations tools",
+    ],
+    unlockedSkills: ["Technical writing", "Operational clarity", "Checklist design", "Process simplification"],
+    tags: ["Writing", "Operations", "Documentation", "Handoffs", "Checklists"],
+    Icon: FileText,
+  },
+  {
+    slug: "unity-lesson-forge",
+    number: "Q-07",
+    title: "Unity Lesson Forge",
+    category: "Teaching",
+    status: "Prototype",
+    description: "Design modular Unity lesson blocks that can become tutorials, workshops, or course chapters.",
+    objective:
+      "Build a reusable teaching kit for turning Unity concepts into small lessons with clear outcomes and useful exercises.",
+    role: "Curriculum Designer, Unity Instructor, Learning Experience Designer",
+    tools: ["Unity", "C#", "Lesson templates", "Exercise design", "Rubrics"],
+    obstacles: [
+      "Lessons need to be small enough to finish but meaningful enough to remember",
+      "Students arrive with different levels of coding confidence",
+      "Exercises must reveal design reasoning, not just code syntax",
+    ],
+    solution: [
+      "Create a repeatable lesson pattern around concept, build step, playtest, and reflection",
+      "Pair every technical idea with a visible game-design outcome",
+      "Use optional challenge tiers so learners can keep advancing without getting stuck",
+    ],
+    rewards: [
+      "Faster course planning",
+      "More consistent learner experience",
+      "A library of reusable Unity teaching modules",
+    ],
+    unlockedSkills: ["Instructional design", "Unity pedagogy", "Exercise scaffolding", "Assessment design"],
+    tags: ["Unity", "Teaching", "Curriculum", "C#", "Workshops"],
+    Icon: GraduationCap,
+  },
+  {
+    slug: "prototype-lab",
+    number: "Q-08",
+    title: "Prototype Lab",
+    category: "Experiment",
+    status: "Prototype",
+    description: "A sandbox for testing small interaction ideas, UI loops, and game-feel experiments.",
+    objective:
+      "Maintain a lightweight lab for exploring mechanics, microinteractions, and interface ideas before they become full projects.",
+    role: "Prototyper, Interaction Designer, Systems Tester",
+    tools: ["Unity", "React", "CSS", "Rapid prototyping", "Playtest notes"],
+    obstacles: [
+      "Good ideas can become too large before their core value is proven",
+      "Small interaction tests need enough structure to produce useful decisions",
+      "Experiments should be disposable without losing what they teach",
+    ],
+    solution: [
+      "Keep experiments scoped around one question or feel target",
+      "Record what worked, what failed, and what should be reused",
+      "Move promising interaction patterns into production projects only after validation",
+    ],
+    rewards: [
+      "Faster creative iteration",
+      "Lower-risk exploration",
+      "A growing library of tested interaction patterns",
+    ],
+    unlockedSkills: ["Rapid prototyping", "Interaction testing", "Game feel", "Experiment design"],
+    tags: ["Prototype", "Experiment", "Game feel", "UI", "Iteration"],
+    Icon: FlaskConical,
+  },
+  {
+    slug: "systems-design-notes",
+    number: "Q-09",
+    title: "Systems Design Notes",
+    category: "Writing",
+    status: "Active",
+    description: "Write short essays about systems, tools, games, and how people understand complexity.",
+    objective:
+      "Create a body of writing that explains how systems become clearer through good interfaces, rules, and teaching.",
+    role: "Writer, Systems Designer, Technical Communicator",
+    tools: ["Essays", "Diagrams", "Examples", "Revision", "Editorial planning"],
+    obstacles: [
+      "Systems writing can become abstract without concrete examples",
+      "Professional readers need useful takeaways, not just theory",
+      "The voice needs to feel thoughtful without becoming dense",
+    ],
+    solution: [
+      "Anchor each piece around one practical system design idea",
+      "Use games, operations, and teaching examples to make patterns visible",
+      "Keep posts short enough to read and specific enough to apply",
+    ],
+    rewards: [
+      "Clearer public point of view",
+      "Reusable language for portfolio case studies",
+      "A stronger bridge between games, tools, and teaching",
+    ],
+    unlockedSkills: ["Essay writing", "Systems thinking", "Editorial strategy", "Concept translation"],
+    tags: ["Writing", "Systems", "UX", "Games", "Teaching"],
+    Icon: PenTool,
+  },
+  {
+    slug: "mentor-sprint-kit",
+    number: "Q-10",
+    title: "Mentor Sprint Kit",
+    category: "Mentorship",
+    status: "Prototype",
+    description: "A lightweight kit for helping small game teams plan, review, and recover momentum.",
+    objective:
+      "Create reusable sprint rituals and review prompts that help teams turn uncertainty into concrete production moves.",
+    role: "Mentor, Production Designer, Team Facilitator",
+    tools: ["Sprint planning", "Retrospectives", "Review prompts", "Milestone boards", "Playtest notes"],
+    obstacles: [
+      "Early teams can confuse effort with progress",
+      "Milestones often lack visible acceptance criteria",
+      "Teams need guidance that respects their ownership of the project",
+    ],
+    solution: [
+      "Design sprint prompts around playable outcomes and decision checkpoints",
+      "Use review rituals that expose blockers, risks, and next actions",
+      "Keep the kit adaptable for different team sizes and project scopes",
+    ],
+    rewards: [
+      "More focused development cycles",
+      "Better critique conversations",
+      "Repeatable mentorship structure",
+    ],
+    unlockedSkills: ["Production coaching", "Team rituals", "Milestone design", "Mentorship systems"],
+    tags: ["Mentorship", "Production", "Sprints", "Teams", "Games"],
+    Icon: Trophy,
   },
 ];
 

@@ -7,6 +7,7 @@ import { CharacterSheetPage } from "./pages/CharacterSheetPage";
 import { CodexPage } from "./pages/CodexPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
+import { QuestDetailPage } from "./pages/QuestDetailPage";
 import { QuestLogPage } from "./pages/QuestLogPage";
 import { SkillTreePage } from "./pages/SkillTreePage";
 
@@ -19,6 +20,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/quest-log" element={<QuestLogPage />} />
+          <Route path="/quest-log/:slug" element={<QuestDetailPage />} />
           <Route path="/skill-tree" element={<SkillTreePage />} />
           <Route path="/codex" element={<CodexPage />} />
           <Route path="/character-sheet" element={<CharacterSheetPage />} />
