@@ -963,7 +963,7 @@ footer {
 
 .skill-tree {
   position: relative;
-  min-height: 480px;
+  min-height: 560px;
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 18%, rgba(216, 180, 106, 0.16), transparent 18rem),
@@ -993,7 +993,7 @@ footer {
 .skill-node {
   position: absolute;
   display: inline-flex;
-  width: 148px;
+  width: 156px;
   min-height: 76px;
   flex-direction: column;
   align-items: center;
@@ -1011,7 +1011,7 @@ footer {
 }
 
 .skill-node.root {
-  width: 174px;
+  width: 188px;
   min-height: 86px;
   border-color: rgba(216, 180, 106, 0.58);
   color: #fff4d2;

@@ -17,6 +17,7 @@ export function SkillTreePreview({ preview = false }: SkillTreePreviewProps) {
   const [selectedNodeId, setSelectedNodeId] = useState("root");
   const root = skillTreeNodes[0];
   const branches = skillTreeNodes.slice(1);
+  const rootLineAnchor = { x: root.x, y: root.y + 8 };
   const selectedNode = skillTreeNodes.find((node) => node.id === selectedNodeId) ?? root;
   const relatedQuests = useMemo(
     () =>
@@ -57,8 +58,8 @@ export function SkillTreePreview({ preview = false }: SkillTreePreviewProps) {
                 <line
                   key={node.id}
                   className={node.id === selectedNode.id || selectedNode.id === root.id ? "active" : undefined}
-                  x1={root.x}
-                  y1={root.y}
+                  x1={rootLineAnchor.x}
+                  y1={rootLineAnchor.y}
                   x2={node.x}
                   y2={node.y}
                   vectorEffect="non-scaling-stroke"
