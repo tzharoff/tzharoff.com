@@ -56,9 +56,14 @@ export type Quest = {
 export type SkillNode = {
   id: string;
   label: string;
+  title: string;
+  description: string;
   Icon: LucideIcon;
   x: number;
   y: number;
+  tier: "core" | "branch" | "specialization";
+  abilities: string[];
+  relatedQuestSlugs: string[];
 };
 
 export const navItems = [
@@ -695,11 +700,104 @@ export const quests: Quest[] = [
 ];
 
 export const skillTreeNodes: SkillNode[] = [
-  { id: "root", label: "Design Engineer", Icon: Crown, x: 50, y: 18 },
-  { id: "game", label: "Game Development", Icon: Swords, x: 17, y: 62 },
-  { id: "teaching", label: "Teaching", Icon: GraduationCap, x: 39, y: 76 },
-  { id: "tools", label: "Web & Tools", Icon: Code2, x: 61, y: 76 },
-  { id: "systems", label: "Systems Design", Icon: Wrench, x: 83, y: 62 },
+  {
+    id: "root",
+    label: "Design Engineer",
+    title: "Design Engineer",
+    description:
+      "The central build: connecting game design, teaching, frontend tools, and operations systems into practical products.",
+    Icon: Crown,
+    x: 50,
+    y: 14,
+    tier: "core",
+    abilities: [
+      "Turn messy systems into readable interfaces",
+      "Translate real workflows into product features",
+      "Balance playful presentation with practical usability",
+    ],
+    relatedQuestSlugs: ["waypoint", "portfolio-codex", "dispatch-simulator"],
+  },
+  {
+    id: "game-dev",
+    label: "Game Development",
+    title: "Game Development",
+    description:
+      "Gameplay prototypes, progression loops, enemy behavior, game-feel experiments, and readable player-facing systems.",
+    Icon: Swords,
+    x: 16,
+    y: 56,
+    tier: "branch",
+    abilities: [
+      "Prototype mechanics quickly",
+      "Design readable core loops",
+      "Tune feedback, pacing, and player motivation",
+    ],
+    relatedQuestSlugs: ["brain-plunder", "zug-zug", "mummy-mayhem", "prototype-lab"],
+  },
+  {
+    id: "teaching",
+    label: "Teaching",
+    title: "Teaching & Curriculum",
+    description:
+      "Project-based lessons, technical mentoring, and learning paths that help people build confidence through visible progress.",
+    Icon: GraduationCap,
+    x: 38,
+    y: 74,
+    tier: "branch",
+    abilities: [
+      "Break complex ideas into approachable lessons",
+      "Create exercises with immediate playable outcomes",
+      "Coach learners through setup, practice, and iteration",
+    ],
+    relatedQuestSlugs: ["one-line-academy", "unity-lesson-forge", "kotlin-android-bootcamp"],
+  },
+  {
+    id: "tools",
+    label: "Web & Tools",
+    title: "Web & Tools",
+    description:
+      "Frontend systems, internal tools, dashboards, and small-business websites built around clarity and useful action.",
+    Icon: Code2,
+    x: 62,
+    y: 74,
+    tier: "branch",
+    abilities: [
+      "Build reusable React components",
+      "Model operational data for quick decisions",
+      "Create interfaces that reduce friction",
+    ],
+    relatedQuestSlugs: [
+      "waypoint",
+      "waybill",
+      "spotless-ops",
+      "portfolio-codex",
+      "moms-candy-apples-website",
+    ],
+  },
+  {
+    id: "systems",
+    label: "Systems Design",
+    title: "Systems Design",
+    description:
+      "Workflow mapping, operational clarity, knowledge structures, and decision systems for complex real-world problems.",
+    Icon: Wrench,
+    x: 84,
+    y: 56,
+    tier: "branch",
+    abilities: [
+      "Map real-world workflows into understandable models",
+      "Identify data drift and handoff failure points",
+      "Design source-of-truth systems around how people actually work",
+    ],
+    relatedQuestSlugs: [
+      "waypoint",
+      "dispatch-simulator",
+      "handoff-playbook",
+      "systems-design-notes",
+      "synnecticon",
+      "usw-weather-traffic-channel",
+    ],
+  },
 ];
 
 export const socialLinks = [
