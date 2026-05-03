@@ -449,6 +449,13 @@ footer {
   margin-bottom: 2rem;
 }
 
+.quest-log-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
 .section-heading h2,
 .page-title,
 .page-panel h1 {
@@ -557,11 +564,95 @@ footer {
   margin-top: 2rem;
 }
 
+.quest-count {
+  flex: 0 0 auto;
+  margin: 0.6rem 0 0;
+  border: 1px solid rgba(216, 180, 106, 0.22);
+  border-radius: 999px;
+  background: rgba(216, 180, 106, 0.08);
+  padding: 0.42rem 0.7rem;
+  color: #f1ddb2;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quest-controls {
+  display: grid;
+  gap: 0.9rem;
+  margin: -0.6rem 0 1.5rem;
+}
+
+.quest-control-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.24fr);
+  gap: 0.8rem;
+}
+
+.quest-search,
+.quest-sort {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quest-search-box,
+.quest-sort select {
+  min-height: 46px;
+  border: 1px solid rgba(66, 242, 221, 0.18);
+  border-radius: 8px;
+  background: rgba(7, 11, 19, 0.72);
+  color: #eef6ff;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.quest-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 0.8rem;
+}
+
+.quest-search-box svg {
+  color: var(--cyan);
+  flex: 0 0 auto;
+}
+
+.quest-search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #eef6ff;
+  font: inherit;
+  outline: 0;
+}
+
+.quest-search input::placeholder {
+  color: #718198;
+}
+
+.quest-sort select {
+  width: 100%;
+  padding: 0 0.8rem;
+  color: #eef6ff;
+  font-weight: 800;
+}
+
+.quest-search:focus-within .quest-search-box,
+.quest-sort select:focus {
+  border-color: rgba(66, 242, 221, 0.7);
+  background: rgba(66, 242, 221, 0.08);
+  box-shadow: 0 0 0 3px rgba(66, 242, 221, 0.12);
+  outline: 0;
+}
+
 .quest-filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
-  margin: -0.6rem 0 1.5rem;
 }
 
 .quest-filter {
@@ -765,6 +856,11 @@ footer {
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.quest-card.featured {
+  border-color: rgba(216, 180, 106, 0.42);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.34), inset 3px 0 0 rgba(216, 180, 106, 0.5);
+}
+
 .quest-card:hover {
   transform: translateY(-6px);
   border-color: rgba(66, 242, 221, 0.46);
@@ -815,6 +911,19 @@ footer {
   color: #fff7df;
   font-family: "Cinzel", Georgia, serif;
   font-size: 1.4rem;
+}
+
+.featured-badge {
+  align-self: flex-start;
+  margin-top: 0.75rem;
+  border: 1px solid rgba(216, 180, 106, 0.28);
+  border-radius: 999px;
+  background: rgba(216, 180, 106, 0.08);
+  padding: 0.28rem 0.48rem;
+  color: #f3dfb4;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .quest-category {
@@ -941,6 +1050,19 @@ footer {
   .detail-grid,
   .quest-case-grid,
   .quest-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .quest-log-heading {
+    display: block;
+  }
+
+  .quest-count {
+    display: inline-flex;
+    margin: -0.8rem 0 1.4rem;
+  }
+
+  .quest-control-row {
     grid-template-columns: 1fr;
   }
 
