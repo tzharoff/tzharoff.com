@@ -34,7 +34,7 @@ export function QuestDetailPage() {
           <p>
             That entry is not in the current log. It may be hidden, archived, or waiting for a better map marker.
           </p>
-          <Link className="game-button secondary" to="/quest-log">
+          <Link className="game-button secondary" to="/portfolio/quest-log">
             <ArrowLeft size={18} aria-hidden="true" />
             Return to Quest Log
           </Link>
@@ -45,7 +45,7 @@ export function QuestDetailPage() {
 
   return (
     <section className="quest-detail-page page-shell mx-auto max-w-7xl px-5 py-14 lg:px-8">
-      <Link className="back-link" to="/quest-log">
+      <Link className="back-link" to="/portfolio/quest-log">
         <ArrowLeft size={17} aria-hidden="true" />
         Back to Quest Log
       </Link>

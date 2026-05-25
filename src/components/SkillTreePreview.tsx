@@ -45,7 +45,7 @@ export function SkillTreePreview({ preview = false }: SkillTreePreviewProps) {
               : "Select a node to see the abilities it unlocks and the quests that prove them."}
           </p>
           {preview ? (
-            <Link className="game-button secondary" to="/skill-tree">
+            <Link className="game-button secondary" to="/portfolio/skill-tree">
               View Full Skill Tree
             </Link>
           ) : null}
@@ -114,7 +114,7 @@ export function SkillTreePreview({ preview = false }: SkillTreePreviewProps) {
                     <Link
                       className="related-quest-card"
                       key={quest.slug}
-                      to={`/quest-log/${quest.slug}`}
+                      to={`/portfolio/quest-log/${quest.slug}`}
                       aria-label={`Open related quest ${quest.number}: ${quest.title}`}
                     >
                       <div className="related-quest-topline">

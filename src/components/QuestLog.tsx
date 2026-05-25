@@ -154,7 +154,7 @@ export function QuestLog({ preview = false }: QuestLogProps) {
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
-              <Link className="quest-link" to={`/quest-log/${quest.slug}`} aria-label={`Open quest: ${quest.title}`}>
+              <Link className="quest-link" to={`/portfolio/quest-log/${quest.slug}`} aria-label={`Open quest: ${quest.title}`}>
                 Open Quest
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
@@ -168,7 +168,7 @@ export function QuestLog({ preview = false }: QuestLogProps) {
         ) : null}
         {preview ? (
           <div className="section-more">
-            <Link className="game-button secondary" to="/quest-log">
+            <Link className="game-button secondary" to="/portfolio/quest-log">
               View Full Quest Log
               <ArrowUpRight size={16} aria-hidden="true" />
             </Link>

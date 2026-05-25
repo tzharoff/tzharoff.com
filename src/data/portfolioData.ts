@@ -20,7 +20,6 @@ import {
   TreePine,
   Trophy,
   Wrench,
-  Youtube,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -67,12 +66,11 @@ export type SkillNode = {
 };
 
 export const navItems = [
-  { label: "Main Menu", href: "/", Icon: Compass },
-  { label: "Quest Log", href: "/quest-log", Icon: ScrollText },
-  { label: "Skill Tree", href: "/skill-tree", Icon: TreePine },
-  { label: "Codex", href: "/codex", Icon: BookOpen },
-  { label: "Character Sheet", href: "/character-sheet", Icon: ShieldCheck },
-  { label: "Contact", href: "/contact", Icon: Mail },
+  { label: "Main Menu", href: "/portfolio", Icon: Compass },
+  { label: "Quest Log", href: "/portfolio/quest-log", Icon: ScrollText },
+  { label: "Skill Tree", href: "/portfolio/skill-tree", Icon: TreePine },
+  { label: "Codex", href: "/portfolio/codex", Icon: BookOpen },
+  { label: "Character Sheet", href: "/portfolio/character-sheet", Icon: ShieldCheck },
 ];
 
 export const coreSkills = ["Unity", "React", "Firebase", "UX", "Curriculum", "Systems"];
@@ -801,10 +799,9 @@ export const skillTreeNodes: SkillNode[] = [
 ];
 
 export const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/", Icon: Linkedin },
-  { label: "GitHub", href: "https://github.com/", Icon: Github },
-  { label: "YouTube", href: "https://www.youtube.com/", Icon: Youtube },
-  { label: "Email", href: "mailto:hello@example.com", Icon: Mail },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/tzharoff/", Icon: Linkedin },
+  { label: "GitHub", href: "https://github.com/tzharoff", Icon: Github },
+  { label: "Email", href: "mailto:tony@tzharoff.com", Icon: Mail },
 ];
 
 export const heroHighlights = [

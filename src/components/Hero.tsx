@@ -24,11 +24,11 @@ export function Hero({ profile }: HeroProps) {
           </p>
 
           <div className="hero-actions" aria-label="Primary actions">
-            <Link className="game-button primary" to="/quest-log">
+            <Link className="game-button primary" to="/portfolio/quest-log">
               <Eye size={18} aria-hidden="true" />
               View Projects
             </Link>
-            <Link className="game-button secondary" to="/skill-tree">
+            <Link className="game-button secondary" to="/portfolio/skill-tree">
               <TreePine size={18} aria-hidden="true" />
               Open Skill Tree
             </Link>
