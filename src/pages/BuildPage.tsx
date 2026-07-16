@@ -27,6 +27,7 @@ export function BuildPage() {
 
       <section className="mx-auto max-w-4xl px-5 py-6 lg:px-8">
         <DialogueBox
+          pose="frustrated"
           heading="Development rule of thumb"
           lines={[
             "One research effort should produce multiple formats.",

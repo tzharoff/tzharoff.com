@@ -24,6 +24,44 @@ const files = import.meta.glob("../content/lessons/*.md", {
   eager: true,
 }) as Record<string, string>;
 
+export const tonyPoses = [
+  "explaining",
+  "thinking",
+  "pointing-left",
+  "pointing-right",
+  "excited",
+  "skeptical",
+  "confused",
+  "frustrated",
+  "panic",
+  "laughing",
+  "deadpan",
+  "expert",
+] as const;
+
+export type TonyPose = (typeof tonyPoses)[number];
+
+const defaultPoseCycle: TonyPose[] = ["explaining", "expert", "excited", "thinking"];
+
+/**
+ * Every blockquote becomes a "Tony's Frame" with a Tony pose portrait.
+ * Authors pick one by starting the quote with `[pose: name]`; quotes
+ * without a tag rotate through a default cycle.
+ */
+function addTonyToQuotes(html: string): string {
+  let untagged = 0;
+  return html.replace(
+    /<blockquote>\s*<p>(?:\[pose:\s*([a-z-]+)\]\s*)?/g,
+    (_match, tagged: string | undefined) => {
+      const pose: TonyPose =
+        tagged && (tonyPoses as readonly string[]).includes(tagged)
+          ? (tagged as TonyPose)
+          : defaultPoseCycle[untagged++ % defaultPoseCycle.length];
+      return `<blockquote class="has-tony"><img class="tig-quote-tony" src="/tony/${pose}.png" alt="" /><p>`;
+    },
+  );
+}
+
 function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!match) return { meta: {}, body: raw };
@@ -49,7 +87,7 @@ export const lessons: Lesson[] = Object.entries(files)
       minutes: Number(meta.minutes ?? 10),
       objective: meta.objective ?? "",
       vocabulary: meta.vocabulary ? meta.vocabulary.split(",").map((v) => v.trim()) : [],
-      html: marked.parse(body, { async: false }),
+      html: addTonyToQuotes(marked.parse(body, { async: false })),
     };
   })
   .sort((a, b) => a.course.localeCompare(b.course) || a.order - b.order);

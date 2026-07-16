@@ -61,6 +61,7 @@ export function LearnPage() {
             </p>
             <div className="mt-6">
               <DialogueBox
+                pose="expert"
                 heading="The Tony guarantee"
                 lines={[
                   "We name the concept and make it visible.",

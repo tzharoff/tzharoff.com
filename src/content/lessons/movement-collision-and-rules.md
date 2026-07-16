@@ -24,7 +24,7 @@ Tutorials usually teach these as one blob ("add a Rigidbody, add a Collider, don
 
 Collision and rules are different jobs, and confusing them is the most common beginner trap:
 
-> Collisions tell the game that two things met. Rules tell the game what that meeting means.
+> [pose: thinking] Collisions tell the game that two things met. Rules tell the game what that meeting means.
 
 Mario touching a Goomba is *one collision event*. The rule asks a question about it — was Mario descending from above? — and produces *two completely different outcomes* from the same contact. The overlap has no meaning until a rule gives it one.
 

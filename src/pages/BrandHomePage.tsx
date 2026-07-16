@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DialogueBox } from "../components/DialogueBox";
 import { brand, finalFrames, primaryPaths, seasonZero } from "../data/brandData";
+import { tonyPoses } from "../lib/lessons";
 
 function TonyTip() {
   const [index, setIndex] = useState(0);
@@ -19,7 +20,7 @@ function TonyTip() {
       <span className="tig-nameplate">Tony Tip</span>
       <div className="flex flex-wrap items-center gap-5 pt-2 sm:flex-nowrap">
         <div className="tig-portrait hidden sm:grid" aria-hidden="true">
-          <img src="/tony.png" alt="" />
+          <img src={`/tony/${tonyPoses[index % tonyPoses.length]}.png`} alt="" />
         </div>
         <p key={index} className="min-w-0 flex-1 text-lg font-extrabold leading-snug text-tigink md:text-xl">
           {finalFrames[index]}
@@ -82,6 +83,7 @@ export function BrandHomePage() {
         {/* ── The bottom screen: dialogue window ── */}
         <div className="mx-auto mt-8 max-w-3xl">
           <DialogueBox
+            pose="explaining"
             heading="Welcome to the home of Tony in the Game"
             lines={[
               "We don't teach you where the button is.",

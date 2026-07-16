@@ -53,6 +53,7 @@ export function AboutPage() {
       {/* ── BRAND ORIGIN ─────────────────────────────────────────────── */}
       <section className="mx-auto max-w-4xl px-5 py-8 lg:px-8">
         <DialogueBox
+          pose="thinking"
           heading="The brand origin"
           lines={[
             "Most tutorials teach where the button is.",

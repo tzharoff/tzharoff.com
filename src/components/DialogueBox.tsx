@@ -1,18 +1,21 @@
+import type { TonyPose } from "../lib/lessons";
+
 type DialogueBoxProps = {
   heading: string;
   lines: string[];
   showPortrait?: boolean;
+  pose?: TonyPose;
   className?: string;
 };
 
-export function DialogueBox({ heading, lines, showPortrait = true, className = "" }: DialogueBoxProps) {
+export function DialogueBox({ heading, lines, showPortrait = true, pose, className = "" }: DialogueBoxProps) {
   return (
     <div className={`tig-dialogue ${className}`}>
       <span className="tig-nameplate">Tony</span>
       <div className="flex items-start gap-4 pt-1">
         {showPortrait && (
           <div className="tig-portrait hidden sm:grid" aria-hidden="true">
-            <img src="/tony.png" alt="" />
+            <img src={pose ? `/tony/${pose}.png` : "/tony.png"} alt="" />
           </div>
         )}
         <div className="min-w-0 flex-1">

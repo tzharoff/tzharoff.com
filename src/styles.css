@@ -1788,6 +1788,7 @@ footer {
 
 .tig-prose blockquote {
   position: relative;
+  display: flow-root;
   margin: 1.4em 0;
   border: 3px solid #14245e;
   border-radius: 14px;
@@ -1795,6 +1796,21 @@ footer {
   padding: 1rem 1.2rem;
   font-weight: 800;
   font-style: italic;
+}
+
+.tig-quote-tony {
+  float: left;
+  width: 78px;
+  height: auto;
+  margin: 0.15rem 0.9rem 0.25rem 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  filter: drop-shadow(2px 3px 0 rgba(20, 36, 94, 0.25));
+}
+
+.tig-prose blockquote.has-tony {
+  min-height: 96px;
+  padding-top: 1.15rem;
 }
 
 .tig-prose blockquote::before {
