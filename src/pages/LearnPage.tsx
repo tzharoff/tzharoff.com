@@ -1,5 +1,7 @@
-import { GraduationCap, Lightbulb, RefreshCw } from "lucide-react";
+import { ArrowRight, BookOpenCheck, GraduationCap, Lightbulb, RefreshCw } from "lucide-react";
+import { Link } from "react-router-dom";
 import { DialogueBox } from "../components/DialogueBox";
+import { courses } from "../lib/lessons";
 import {
   classroomPrompt,
   episodeSupport,
@@ -23,6 +25,29 @@ export function LearnPage() {
           A tutorial answers “How do I make this?” Tony in the Game asks “How do I understand what I'm making?” The
           goal is mental models that make tutorials useful — instead of dependency-forming.
         </p>
+      </section>
+
+      {/* ── LESSON LIBRARY CTA ───────────────────────────────────────── */}
+      <section className="mx-auto max-w-7xl px-5 py-6 lg:px-8">
+        <div className="tig-panel flex flex-wrap items-center justify-between gap-6 p-8">
+          <div className="max-w-xl">
+            <p className="tig-kicker mb-2">
+              <BookOpenCheck size={14} aria-hidden="true" />
+              New game
+            </p>
+            <h2 className="text-2xl font-black uppercase tracking-wide text-tigink md:text-3xl">
+              The lesson library is open
+            </h2>
+            <p className="mt-2 font-semibold leading-relaxed text-tigink/80">
+              {courses.reduce((n, c) => n + c.lessons.length, 0)} written lessons and counting, starting with{" "}
+              {courses[0]?.title}. Your progress saves on this device.
+            </p>
+          </div>
+          <Link to="/learn/lessons" className="tig-btn red">
+            Start learning
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
       </section>
 
       {/* ── LESSON SEQUENCE ──────────────────────────────────────────── */}

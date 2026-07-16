@@ -9,6 +9,8 @@ import { CodexPage } from "./pages/CodexPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
 import { LearnPage } from "./pages/LearnPage";
+import { LessonPage } from "./pages/LessonPage";
+import { LessonsPage } from "./pages/LessonsPage";
 import { NotesPage } from "./pages/NotesPage";
 import { QuestDetailPage } from "./pages/QuestDetailPage";
 import { QuestLogPage } from "./pages/QuestLogPage";
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/" element={<BrandHomePage />} />
         <Route path="/watch" element={<WatchPage />} />
         <Route path="/learn" element={<LearnPage />} />
+        <Route path="/learn/lessons" element={<LessonsPage />} />
+        <Route path="/learn/lessons/:slug" element={<LessonPage />} />
         <Route path="/build" element={<BuildPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/about" element={<AboutPage />} />

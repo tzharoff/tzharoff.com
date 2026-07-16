@@ -1704,6 +1704,179 @@ footer {
   color: #fff;
 }
 
+/* ── Rendered Markdown lessons ── */
+
+.tig-prose {
+  color: #1a2360;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.tig-prose h1,
+.tig-prose h2,
+.tig-prose h3 {
+  margin: 1.8em 0 0.6em;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tig-prose h1:first-child,
+.tig-prose h2:first-child,
+.tig-prose h3:first-child {
+  margin-top: 0;
+}
+
+.tig-prose h1 {
+  font-size: 1.7rem;
+}
+
+.tig-prose h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 1.35rem;
+  color: #cf2e35;
+}
+
+.tig-prose h2::before {
+  content: "■";
+  flex: 0 0 auto;
+  font-size: 0.8em;
+  color: #14245e;
+}
+
+.tig-prose h3 {
+  font-size: 1.08rem;
+}
+
+.tig-prose p {
+  margin: 0.9em 0;
+}
+
+.tig-prose strong {
+  font-weight: 900;
+}
+
+.tig-prose a {
+  color: #cf2e35;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.tig-prose ul,
+.tig-prose ol {
+  margin: 0.9em 0;
+  padding-left: 1.4em;
+}
+
+.tig-prose li {
+  margin: 0.4em 0;
+}
+
+.tig-prose ul li::marker {
+  content: "▸ ";
+  color: #e03a41;
+}
+
+.tig-prose ol li::marker {
+  color: #cf2e35;
+  font-weight: 900;
+}
+
+.tig-prose blockquote {
+  position: relative;
+  margin: 1.4em 0;
+  border: 3px solid #14245e;
+  border-radius: 14px;
+  background: #eef2ff;
+  padding: 1rem 1.2rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.tig-prose blockquote::before {
+  content: "TONY'S FRAME";
+  position: absolute;
+  top: -0.72rem;
+  left: 0.9rem;
+  border: 2px solid #14245e;
+  border-radius: 7px;
+  background: #e03a41;
+  padding: 0.08rem 0.5rem;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.14em;
+}
+
+.tig-prose blockquote p {
+  margin: 0.3em 0;
+}
+
+.tig-prose code {
+  border-radius: 6px;
+  background: rgba(20, 36, 94, 0.1);
+  padding: 0.12em 0.4em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  font-weight: 700;
+}
+
+.tig-prose pre {
+  overflow-x: auto;
+  margin: 1.2em 0;
+  border: 3px solid #060d2e;
+  border-radius: 12px;
+  background: #0d194a;
+  padding: 1rem 1.2rem;
+  color: #f8faff;
+}
+
+.tig-prose pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.tig-prose img {
+  max-width: 100%;
+  border: 3px solid #14245e;
+  border-radius: 12px;
+}
+
+.tig-prose hr {
+  margin: 1.6em 0;
+  border: 0;
+  border-top: 3px dashed rgba(20, 36, 94, 0.25);
+}
+
+.tig-prose table {
+  width: 100%;
+  margin: 1.2em 0;
+  border-collapse: collapse;
+  font-size: 0.94em;
+}
+
+.tig-prose th,
+.tig-prose td {
+  border: 2px solid rgba(20, 36, 94, 0.25);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+
+.tig-prose th {
+  background: #14245e;
+  color: #f8faff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+}
+
 .tig-blink {
   animation: tig-blink 1.2s steps(2, jump-none) infinite;
 }
