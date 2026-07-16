@@ -1,20 +1,30 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ConsultingLayout } from "./layouts/ConsultingLayout";
+import { BrandLayout } from "./layouts/BrandLayout";
 import { PortfolioLayout } from "./layouts/PortfolioLayout";
+import { AboutPage } from "./pages/AboutPage";
+import { BrandHomePage } from "./pages/BrandHomePage";
+import { BuildPage } from "./pages/BuildPage";
 import { CharacterSheetPage } from "./pages/CharacterSheetPage";
 import { CodexPage } from "./pages/CodexPage";
-import { ConsultingHomePage } from "./pages/ConsultingHomePage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
+import { LearnPage } from "./pages/LearnPage";
+import { NotesPage } from "./pages/NotesPage";
 import { QuestDetailPage } from "./pages/QuestDetailPage";
 import { QuestLogPage } from "./pages/QuestLogPage";
 import { SkillTreePage } from "./pages/SkillTreePage";
+import { WatchPage } from "./pages/WatchPage";
 
 export default function App() {
   return (
     <Routes>
-      <Route element={<ConsultingLayout />}>
-        <Route path="/" element={<ConsultingHomePage />} />
+      <Route element={<BrandLayout />}>
+        <Route path="/" element={<BrandHomePage />} />
+        <Route path="/watch" element={<WatchPage />} />
+        <Route path="/learn" element={<LearnPage />} />
+        <Route path="/build" element={<BuildPage />} />
+        <Route path="/notes" element={<NotesPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Route>
       <Route element={<PortfolioLayout />}>

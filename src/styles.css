@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -1253,6 +1253,464 @@ footer {
   .skill-node.root {
     width: 152px;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TONY IN THE GAME — brand system (tig-*)
+   Red, white, and deep blue. Early-2000s handheld UI energy.
+   Hard key-frame transitions: state changes snap, they do not tween.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.tig-root {
+  min-height: 100vh;
+  font-family: "Nunito", "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: #f8faff;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(84, 118, 255, 0.22), transparent 30rem),
+    radial-gradient(circle at 86% 90%, rgba(224, 58, 65, 0.14), transparent 34rem),
+    linear-gradient(160deg, #14245e 0%, #0b153f 55%, #091133 100%);
+}
+
+.tig-root::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(248, 250, 255, 0.07) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.25) 60%, transparent);
+}
+
+/* ── Panels ── */
+
+.tig-panel {
+  border: 3px solid #14245e;
+  border-radius: 18px;
+  background: #f8faff;
+  color: #1a2360;
+  box-shadow: 0 6px 0 rgba(5, 10, 34, 0.55);
+}
+
+.tig-panel-blue {
+  border: 3px solid rgba(248, 250, 255, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(248, 250, 255, 0.08), transparent 46%), rgba(13, 25, 74, 0.88);
+  color: #f8faff;
+  box-shadow: 0 6px 0 rgba(5, 10, 34, 0.55);
+}
+
+.tig-screen {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #060d2e;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 76% 22%, rgba(84, 118, 255, 0.3), transparent 24rem),
+    linear-gradient(165deg, #2143b0 0%, #172c7c 58%, #101f5e 100%);
+  box-shadow:
+    0 10px 0 rgba(5, 10, 34, 0.6),
+    inset 0 0 0 2px rgba(248, 250, 255, 0.14);
+}
+
+.tig-screen::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0 2px,
+    transparent 2px 5px
+  );
+}
+
+/* ── Type helpers ── */
+
+.tig-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff8a8f;
+}
+
+.tig-panel .tig-kicker,
+.tig-dialogue .tig-kicker {
+  color: #cf2e35;
+}
+
+.tig-title {
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.tig-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 2px solid #14245e;
+  border-radius: 999px;
+  background: #f8faff;
+  padding: 0.3rem 0.7rem;
+  color: #1a2360;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tig-chip.red {
+  background: #e03a41;
+  border-color: #8f1d22;
+  color: #fff;
+}
+
+.tig-chip.ghost {
+  background: rgba(248, 250, 255, 0.1);
+  border-color: rgba(248, 250, 255, 0.35);
+  color: #f8faff;
+}
+
+/* ── Buttons: instant snap, no tween ── */
+
+.tig-btn {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 3px solid #060d2e;
+  border-radius: 14px;
+  padding: 0.65rem 1.3rem;
+  font-family: "Nunito", Inter, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 #060d2e;
+  transition: none;
+}
+
+.tig-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #060d2e;
+}
+
+.tig-btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 0 0 #060d2e;
+}
+
+.tig-btn.red {
+  background: #e03a41;
+  color: #fff;
+}
+
+.tig-btn.white {
+  background: #f8faff;
+  color: #1a2360;
+}
+
+.tig-btn.blue {
+  background: #2143b0;
+  color: #f8faff;
+}
+
+/* ── DS-inspired dialogue window ── */
+
+.tig-dialogue {
+  position: relative;
+  border: 4px solid #14245e;
+  border-radius: 18px;
+  background: #f8faff;
+  color: #1a2360;
+  padding: 1.5rem 1.4rem 1.3rem;
+  box-shadow:
+    0 7px 0 rgba(5, 10, 34, 0.55),
+    inset 0 0 0 2px rgba(33, 67, 176, 0.14);
+}
+
+.tig-nameplate {
+  position: absolute;
+  top: -1.05rem;
+  left: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 3px solid #14245e;
+  border-radius: 9px;
+  background: #e03a41;
+  padding: 0.22rem 0.75rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.tig-portrait {
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 3px solid #14245e;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #dbe4ff, #b8c8f7);
+}
+
+.tig-portrait img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+}
+
+.tig-dialogue-heading {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #cf2e35;
+}
+
+.tig-dialogue-lines {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tig-dialogue-lines li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.45;
+  animation: tig-appear 0.01s steps(1) both;
+}
+
+.tig-dialogue-lines li::before {
+  content: "▸";
+  color: #e03a41;
+  flex: 0 0 auto;
+}
+
+.tig-dialogue-lines li:nth-child(1) { animation-delay: 0.25s; }
+.tig-dialogue-lines li:nth-child(2) { animation-delay: 0.85s; }
+.tig-dialogue-lines li:nth-child(3) { animation-delay: 1.45s; }
+.tig-dialogue-lines li:nth-child(4) { animation-delay: 2.05s; }
+
+.tig-advance {
+  position: absolute;
+  right: 1.05rem;
+  bottom: 0.65rem;
+  color: #e03a41;
+  font-size: 1rem;
+  animation: tig-bounce 0.9s steps(2, jump-none) infinite;
+}
+
+@keyframes tig-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes tig-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ── Pose-swapping Tony: pose-to-pose, no in-betweens ── */
+
+.tig-pose {
+  animation: tig-pose 7s steps(1, jump-none) infinite;
+  transform-origin: 50% 88%;
+}
+
+@keyframes tig-pose {
+  0%   { transform: none; }
+  22%  { transform: scaleX(-1); }
+  40%  { transform: rotate(-5deg) scale(1.05); }
+  58%  { transform: scaleX(-1) rotate(4deg); }
+  76%  { transform: scale(0.96) translateY(6px); }
+  90%  { transform: rotate(2deg) scale(1.02); }
+}
+
+/* ── Brand nav ── */
+
+.tig-nav-link {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 0.45rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  color: #dbe4ff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: none;
+}
+
+.tig-nav-link:hover {
+  border-color: rgba(248, 250, 255, 0.45);
+  background: rgba(248, 250, 255, 0.1);
+  color: #ffffff;
+}
+
+.tig-nav-link.active {
+  border-color: #8f1d22;
+  background: #e03a41;
+  color: #ffffff;
+  box-shadow: 0 3px 0 rgba(5, 10, 34, 0.5);
+}
+
+.tig-nav-menu {
+  display: none;
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 4.6rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  border: 3px solid #14245e;
+  border-radius: 14px;
+  background: #17297a;
+  padding: 0.75rem;
+  box-shadow: 0 14px 0 rgba(5, 10, 34, 0.45);
+}
+
+.tig-nav-menu.open {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .tig-nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.tig-menu-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid #060d2e;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #1a2360;
+  box-shadow: 0 4px 0 #060d2e;
+  transition: none;
+}
+
+.tig-menu-toggle:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #060d2e;
+}
+
+/* ── Lists and misc ── */
+
+.tig-step-list {
+  counter-reset: tig-step;
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tig-step-list li {
+  counter-increment: tig-step;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  border: 2px solid rgba(20, 36, 94, 0.2);
+  border-left: 5px solid #e03a41;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 0.75rem 0.9rem;
+  color: #1a2360;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.tig-step-list li::before {
+  content: counter(tig-step, decimal-leading-zero);
+  flex: 0 0 auto;
+  color: #cf2e35;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.tig-check-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tig-check-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: #1a2360;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.tig-check-list li::before {
+  content: "★";
+  color: #e03a41;
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+}
+
+.tig-social {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid #060d2e;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #1a2360;
+  box-shadow: 0 4px 0 #060d2e;
+  transition: none;
+}
+
+.tig-social:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #060d2e;
+  background: #e03a41;
+  color: #fff;
+}
+
+.tig-blink {
+  animation: tig-blink 1.2s steps(2, jump-none) infinite;
+}
+
+@keyframes tig-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
 }
 
 @media (prefers-reduced-motion: reduce) {

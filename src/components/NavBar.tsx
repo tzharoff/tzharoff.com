@@ -13,7 +13,7 @@ export function NavBar() {
           <span className="grid h-9 w-9 place-items-center rounded-full border border-oldgold/50 bg-oldgold/10 text-oldgold shadow-[0_0_22px_rgba(216,180,106,0.18)]">
             TZ
           </span>
-          <span className="hidden sm:block">Playable Resume</span>
+          <span className="hidden sm:block">Tony in the Game</span>
         </Link>
 
         <button

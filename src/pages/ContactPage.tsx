@@ -1,10 +1,11 @@
-import { ArrowUpRight, Clock, Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { DialogueBox } from "../components/DialogueBox";
 
-const prompts = [
-  "What your team does and roughly how big it is",
-  "The specific friction point you're trying to solve",
-  "Whether you have a tool in mind or are starting from scratch",
-  "Any timeline pressure or constraints worth knowing upfront",
+const inquiryTypes = [
+  { title: "Collaboration", body: "Videos, games, or educational projects worth building together." },
+  { title: "Classrooms", body: "Using episodes and guides with students, or shaping teacher resources." },
+  { title: "Workshops & speaking", body: "Game-development literacy sessions, talks, and training." },
+  { title: "Consulting", body: "Workflow tools, operational systems, and professional inquiries." },
 ];
 
 const contactMethods = [
@@ -13,7 +14,7 @@ const contactMethods = [
     label: "Email",
     value: "tony@tzharoff.com",
     href: "mailto:tony@tzharoff.com",
-    note: "Best for project inquiries",
+    note: "Best for project and classroom inquiries",
   },
   {
     Icon: Linkedin,
@@ -33,41 +34,40 @@ const contactMethods = [
 
 export function ContactPage() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-16 md:py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-5 py-14 md:py-20 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-
         {/* Left — framing */}
         <div>
-          <p className="section-kicker mb-4">
-            <MessageSquare size={16} aria-hidden="true" />
-            Get in Touch
+          <p className="tig-kicker mb-4">
+            <MessageSquare size={14} aria-hidden="true" />
+            Contact
           </p>
-          <h1 className="mb-4 font-display text-4xl font-bold leading-tight text-slate-100 md:text-5xl">
-            Let's figure out<br />what you actually need.
+          <h1 className="tig-title mb-5 text-4xl text-white md:text-5xl">
+            Start a conversation
           </h1>
-          <p className="mb-8 text-lg leading-relaxed text-slate-400">
-            Not every problem needs a custom app. Not every fix needs months of work.
-            Send me a note about what's breaking and we'll figure out the right next move together.
+          <p className="mb-8 max-w-xl text-lg font-semibold leading-relaxed text-tigsky">
+            Collaboration, classrooms, workshops, speaking, and professional inquiries all land in the same inbox —
+            tell me which quest you're on.
           </p>
 
-          <div className="panel rounded-2xl p-6">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-400">
-              Helpful to include in your message
-            </h2>
-            <ul className="space-y-3">
-              {prompts.map((prompt) => (
-                <li key={prompt} className="flex items-start gap-3 text-sm leading-relaxed text-slate-300">
-                  <span className="mt-1 shrink-0 text-oldgold">→</span>
-                  {prompt}
-                </li>
-              ))}
-            </ul>
+          <div className="mb-8 grid gap-4 sm:grid-cols-2">
+            {inquiryTypes.map(({ title, body }) => (
+              <div key={title} className="tig-panel p-5">
+                <h2 className="mb-1 text-base font-black uppercase tracking-wide text-tigink">{title}</h2>
+                <p className="text-sm font-semibold leading-relaxed text-tigink/80">{body}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-6 flex items-start gap-3 rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-4 text-sm text-slate-400">
-            <Clock size={16} className="mt-0.5 shrink-0 text-cyan-400" aria-hidden="true" />
-            I typically respond within one business day.
-          </div>
+          <DialogueBox
+            heading="Helpful to include"
+            lines={[
+              "Who you are and what you're working on.",
+              "What you're hoping Tony can help with.",
+              "Any timeline worth knowing up front.",
+            ]}
+            showPortrait={false}
+          />
         </div>
 
         {/* Right — contact methods */}
@@ -78,21 +78,23 @@ export function ContactPage() {
               href={href}
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-              className="panel group flex items-center gap-5 rounded-2xl p-6 transition-colors hover:border-cyan-300/30"
+              className="tig-panel group flex items-center gap-5 p-6 no-underline"
             >
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/8 text-cyan-400 transition-colors group-hover:border-cyan-300/40 group-hover:bg-cyan-300/12">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[3px] border-tigframe bg-tigred text-white">
                 <Icon size={22} aria-hidden="true" />
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">{label}</p>
-                <p className="truncate font-medium text-slate-100">{value}</p>
-                <p className="text-xs text-slate-500">{note}</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-black uppercase tracking-widest text-tigred">{label}</p>
+                <p className="truncate font-extrabold text-tigink">{value}</p>
+                <p className="text-xs font-semibold text-tigink/70">{note}</p>
               </div>
-              <ArrowUpRight size={18} className="shrink-0 text-slate-600 transition-colors group-hover:text-cyan-400" aria-hidden="true" />
+              <ArrowUpRight size={18} className="shrink-0 text-tigink/40 group-hover:text-tigred" aria-hidden="true" />
             </a>
           ))}
+          <p className="mt-2 px-2 text-sm font-semibold text-tigsky">
+            I typically respond within one business day.
+          </p>
         </div>
-
       </div>
     </section>
   );
