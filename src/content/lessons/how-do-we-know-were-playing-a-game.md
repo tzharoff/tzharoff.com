@@ -10,56 +10,123 @@ vocabulary: input, game state, rules, feedback, play loop, mental model
 
 ## This is what it is
 
-At the broadest level, a game is **user input followed by a response from a system of rules (the Game)**. That's it. Not graphics, not story, not a controller — a conversation.
+At the broadest level, playing a game is **a conversation between you and a system of rules**.
 
-You press a button. Something in the world changes. The change means something. You decide what to do next.
+That's it.
 
-Think of Tutorial levels in games, this is the way the game introduces the way it speaks to the player through guided interactions.
+You see something. You press a button. The game decides what that button means. Something changes. The game shows you what happened, and now you have to decide what to do next.
+
+No realistic graphics required. No big story. You don't even need a controller. Your input could come from a keyboard, a mouse, a touchscreen, your voice, or just choosing to wait.
+
+The point is: **you do something, the game responds, and that response means something.**
+
+Think about tutorial levels. A tutorial is the game introducing itself. It gives you a safe place to press a button, see what happens, and begin learning how the game speaks.
 
 ## This is how it works
 
-Every game you have ever played runs the same loop:
+Every game you have ever played has some version of this loop:
 
-1. You see the game world.
-2. You push buttons, move the mouse use joysticks.
-3. The game reads that input and follows its rules.
-4. The game changes.
-5. Video games offer visual feedback the show results.
-6. You learn how the game's rules work and the loop continues!
+1. You see or hear something from the game.
+2. You make a decision and give the game an input.
+3. The game reads that input and checks its rules.
+4. Something in the game changes.
+5. The game gives you feedback so you can understand the result.
+6. You learn something and make your next decision.
 
-Take away any step and play collapses. A movie has feedback but no input. A light switch has on and off but no that's it — flipping it doesn't ask you to *decide* anything.
+Then you do it again!
 
-> Controls tell you what inputs are available. Rules determine what those inputs mean. Feedback is the game.
+What changed is called the **game state**. That can be something obvious, like your character moving across the screen. It can also be something hidden: your health went down, a door became unlocked, an enemy noticed you, or the game remembered that you picked up a key.
+
+But the game isn't the only thing changing. **You are changing too.**
+
+Every time the game responds, you learn a little more about how it works. You press a button and learn that it makes Mario jump. You hit a Question Mark Block and something comes out. The block changes, so you learn that you probably can't use it again.
+
+That understanding in your head is called a **mental model**. It's your current idea of what the game's rules are—even if the game never explains those rules out loud.
+
+> [pose: expert] Controls show you what you can do. Rules decide what it means. Feedback helps you figure out what just happened.
+
+A movie can show you things, but it normally doesn't care what buttons you press. A light switch accepts an input and changes from off to on, but that's about it. There isn't much to explore, learn, or decide.
+
+A game gives you a whole space of possibilities and asks, **"Okay, what do you want to try?"**
 
 ## This is why games use it
 
-Designers don't build "fun" directly — they build loops. When the loop is tight (input feels instant, feedback is readable, rules are learnable), players want to keep talking. When it's loose, players describe the game as "floaty," "confusing," or "unfair". Going through this paragraph, we get an understanding why: delayed feedback feels like something is broken.
+Designers don't build "fun" directly—they build loops.
+
+When the loop is working, the player can connect what they did to what happened. The input feels responsive. The feedback is clear. The rules start to make sense. The player wants to try something else and keep the conversation going.
+
+When the loop isn't working, players start using words like "floaty," "confusing," or "unfair."
+
+Those words are useful! They tell us where to start looking.
+
+- Did the game respond too slowly?
+- Did something change without telling the player?
+- Did the same action seem to follow two different rules?
+- Was the feedback there, but too hard to notice?
+
+We're taking a feeling—"this seems broken"—and turning it into questions we can actually investigate. That's a big part of learning to look at games like a developer.
 
 ## This is how to recognize it
 
-Boot up anything — *Super Mario Bros.*, a match-3 on your phone, *Elden Ring* — and narrate the loop out loud:
+Boot up anything—*Super Mario Bros.*, a match-three game on your phone, *Elden Ring*—and narrate one small moment out loud:
 
-- What did I just perceive?
+- What did I just notice?
 - What input did I give?
 - What rule interpreted it?
-- What state changed?
+- What changed?
 - How did the game tell me?
+- What did I learn?
 
-In *Super Mario Bros.*, press the jump button next to a Goomba. Contact from above while descending defeats the enemy and bounces Mario. Contact from the side damages Mario. **The same collision, two different meanings** — because the rule, not the contact, decides what it means. **NOTE:** We're talking about Collision and we'll get more into it later!
+Let's look at Mario and a Question Mark Block.
+
+Mario stands underneath the block and jumps. He punches it, the block bumps upward, a sound plays, and a power-up comes out.
+
+> [pose: excited] I always thought Mario hit the block with his head! Then I looked at the sprite sheet and saw his fist raised—he punches it. Sometimes looking at a game like a developer means questioning something you thought you already knew.
+
+That one moment gives us the whole loop. The shiny Question Mark Block catches the player's attention and practically asks to be touched. The player decides to jump. The game detects that Mario touched the block. Its rules say that this block can release something, so the block changes from unused to used and the power-up appears. The animation and sound tell the player that their action worked.
+
+Mario touched something, but the collision was only the beginning. **The game's rules decided what that contact caused.**
+
+Collision tells the game that Mario touched the block. The rules turn that collision into a reward.
+
+We're getting into movement and collision here, and we'll dig much deeper into both later. For now, notice that we can separate what we saw from what we think the game is doing:
+
+- **What we saw:** Mario hit the block, it bumped upward, and a power-up appeared.
+- **What we think happened:** The collision activated a rule that changed the block and created the reward.
+- **What we can research:** How does a game detect that something touched a block and make an item appear?
+
+That last question is where we start seeing the game as developers.
 
 ## Now you can build it
 
-You don't need an engine yet. You need the vocabulary:
+You don't need an engine yet. You need the vocabulary to understand what you're looking for.
 
-- Search for **"game loop"** and **"input"** in any engine's documentation.
-- When a tutorial says "add a collider," you now know it's building step 3 — the part where rules interpret events.
+When a tutorial tells you to add an input action, create a variable, or connect an event, don't just copy the steps. Ask what job that piece is doing:
 
->In a 3D game Engine, you'll see a base piece that gives 9 numbers: 
->  <br><br>
-> * Position (X, Y, Z)
-> * Rotation (X, Y, Z)
-> * Scale (X, Y, Z)
+- **Input** receives the player's action.
+- **Variables** remember the current game state.
+- **Rules** decide what the action means.
+- **Events, animation, audio, and UI** help show the result.
 
-These are ways we can position and size the node/gameobject/actor in a game's world. Once you know how to move something in the game, you just need to find a way to accept **input** and you're closer to building a game!
+Different engines will call these things by different names, but the jobs are still there. Once you recognize the job, you know what to search for.
 
-**Exercise:** Choose a game you know. Identify one player input, the game's reaction, the rule producing that reaction, and the feedback communicating it. Write it as five short lines. Every video game you play will follow these rules, and knowing this helps unlock your path to finding a way to define those rules in the game engine's world.
+Try searching for **"input actions," "game state,"** and **"events"** along with the name of any engine you're interested in.
+
+You aren't trying to memorize an engine yet. You're learning how to ask it the right questions.
+
+## Exercise: Catch the game in the act
+
+Choose a game you know and find one small interaction: jumping, opening a door, picking up an item, choosing a card, or attacking an enemy.
+
+Write it as six short lines:
+
+1. **I noticed:** What information did the game give me?
+2. **I did:** What input or decision did I make?
+3. **The rule:** What rule do I think the game checked?
+4. **It changed:** What changed in the game state?
+5. **The game answered:** How did the game show me the result?
+6. **I learned:** What could I understand or predict afterward?
+
+You don't need the game's source code, and you don't have to be right on your first try. Start with what you can see. Make a guess. Then turn that guess into something you can research.
+
+That's how we begin looking at games from the inside.

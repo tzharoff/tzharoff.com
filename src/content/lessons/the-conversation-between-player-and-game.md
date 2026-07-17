@@ -2,7 +2,7 @@
 title: The Conversation Between Player and Game
 course: know-the-game
 courseTitle: Know the Game
-order: 2
+order: 7
 minutes: 10
 objective: See feedback as the game's half of a conversation, and judge whether it is perceivable and consistent.
 vocabulary: feedback, affordance, readability, signal, juice
@@ -30,7 +30,7 @@ Strong moments stack several channels at once. When you defeat an enemy in a gre
 
 More feedback is not automatically better. Stack too much and the signal turns to noise: the player can't tell which flash mattered. Every channel you add also costs production time — art, sound design, tuning. Design is choosing which cost to pay.
 
-> [pose: expert] Players cannot learn from feedback they cannot perceive.
+> [pose: facepalm] Players cannot learn from feedback they cannot perceive.
 
 ## This is how to recognize it
 

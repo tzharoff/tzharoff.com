@@ -29,6 +29,8 @@ export const tonyPoses = [
   "thinking",
   "pointing-left",
   "pointing-right",
+  "pointing-left-shocked",
+  "pointing-right-angry",
   "excited",
   "skeptical",
   "confused",
@@ -37,6 +39,18 @@ export const tonyPoses = [
   "laughing",
   "deadpan",
   "expert",
+  "adjusting-glasses",
+  "idea",
+  "investigating",
+  "annoyed",
+  "gasp",
+  "proud",
+  "facepalm",
+  "whisper",
+  "notes",
+  "graduate",
+  "stop",
+  "shush",
 ] as const;
 
 export type TonyPose = (typeof tonyPoses)[number];

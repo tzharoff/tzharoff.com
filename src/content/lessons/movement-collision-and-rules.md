@@ -2,7 +2,7 @@
 title: Movement, Collision, and Rules
 course: know-the-game
 courseTitle: Know the Game
-order: 3
+order: 8
 minutes: 14
 objective: Separate the three systems tutorials usually blur together — moving, detecting, and deciding.
 vocabulary: movement, collision, trigger, collider, rule, world state
