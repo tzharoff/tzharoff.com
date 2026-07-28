@@ -26,16 +26,16 @@ When a message appears in that channel, the listener can read it and run the rig
 
 ## This is how it works
 
-Let's return to *Pong*.
+Let's return to Tony's coin.
 
-The ball hits the paddle and a collision event is raised. Imagine that event as a new message in a `paddle-hit` channel.
+Tony enters the coin's trigger and a collection event is raised. Imagine that event as a new message in a `coin-collected` channel.
 
 Several parts of the game might care about that one event:
 
-- The ball listens so it can change direction.
 - The audio system listens so it can play a sound.
-- The paddle listens so it can flash.
-- A statistics system listens so it can count the hit.
+- The UI listens so it can increase the coin counter.
+- The message display listens so it can celebrate the pickup.
+- A progress system listens so it can remember how many coins Tony found.
 
 We can describe the path like this:
 
@@ -61,7 +61,7 @@ The analogy helps us see the relationships, even though an engine may organize t
 
 Listeners reduce the amount of event noise each system needs to care about. They also let several systems respond to the same event without one giant piece of code controlling everything.
 
-The paddle doesn't need to know how the sound system works. The sound system only needs to listen for the right event and play the right sound when it arrives.
+The coin doesn't need to know how the sound system or UI works. Those systems only need to listen for the right event and run their own response when it arrives.
 
 This also makes responses easier to change. A developer can add screen shake, an achievement, or controller vibration without changing how the collision itself is detected.
 
@@ -87,7 +87,7 @@ Ask:
 - Which parts were probably listening?
 - Which unrelated events could those listeners safely ignore?
 
-When Pac-Man collects a pellet, the pellet disappears, the score changes, and a sound plays. Those responses could be handled by separate listeners receiving the same collection event.
+When Tony collects a coin, the coin disappears, the counter changes, and a sound plays. Those responses can be handled by separate listeners receiving the same collection event.
 
 We cannot know the exact architecture without seeing the code, but the listener model gives us a useful way to investigate how the systems might be separated.
 
@@ -117,16 +117,16 @@ That's where flags come in.
 
 ## Exercise: Who is listening?
 
-Choose one moment in a game that creates several responses: collecting an item, landing a hit, crossing a finish line, or opening a chest.
+Open Tony's Listeners lesson scene and collect the coin once. Then inspect the listeners connected to the collection event.
 
 Write down:
 
-1. **The sender:** What part of the game announces the event?
-2. **The event:** What just happened?
-3. **The listeners:** Which systems care about it?
-4. **The handlers:** What response does each listener run?
-5. **The connection:** What might each listener search for in an engine?
+1. **The sender:** Find the coin that announces the event.
+2. **The event:** Identify the collection announcement.
+3. **The listeners:** Find the UI, audio, and message responses.
+4. **The handlers:** Write down what each listener does.
+5. **The experiment:** Disable one listener and collect the coin again.
 
-Try removing one imagined listener. If the sound stopped but the score and animation still worked, would the interaction still make sense?
+If the sound stops but the counter and message still work, the event is not broken. One listener simply stopped responding.
 
 You are separating one moment into the systems that hear it and the jobs they perform.

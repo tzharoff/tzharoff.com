@@ -43,40 +43,59 @@ export function BrandHomePage() {
   return (
     <>
       {/* ── HERO: the top screen ─────────────────────────────────────── */}
-      <section className="mx-auto max-w-7xl px-5 pb-10 pt-10 md:pt-16 lg:px-8">
-        <div className="tig-screen px-6 py-10 md:px-12 md:py-14">
-          <div className="relative z-[1] grid items-center gap-10 lg:grid-cols-[1.35fr_1fr]">
-            <div>
-              <p className="tig-kicker mb-5">
-                <Sparkles size={14} aria-hidden="true" />
-                {brand.epigraph}
-              </p>
-              <h1 className="tig-title text-5xl text-white md:text-7xl">
-                Tony <span className="block text-2xl tracking-[0.35em] text-tigsky md:text-3xl">in the</span>
-                <span className="text-[#ff8a8f]">Game</span>
-              </h1>
-              <p className="mt-5 text-xl font-black uppercase tracking-wide text-white md:text-2xl">
-                {brand.promise}
-              </p>
-              <p className="mt-4 max-w-xl text-base font-semibold leading-relaxed text-tigsky md:text-lg">
-                {brand.homepageIntro}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+      <section className="mx-auto max-w-7xl px-5 pb-10 pt-7 md:pt-12 lg:px-8">
+        <div className="tig-screen tig-title-card px-5 pb-7 pt-6 md:px-10 md:pb-10 md:pt-8">
+          <span className="tig-title-card-star star-one" aria-hidden="true">★</span>
+          <span className="tig-title-card-star star-two" aria-hidden="true">★</span>
+          <span className="tig-title-card-star star-three" aria-hidden="true">★</span>
+
+          <div className="relative z-[1]">
+            <p className="tig-adventure-tag">A Tony Zharoff adventure</p>
+            <div className="tig-hero-lockup">
+              <div className="tig-hero-copy">
+                <p className="tig-episode-label">
+                  <Sparkles size={15} aria-hidden="true" />
+                  Now playing: Season Zero
+                </p>
+                <h1 className="tig-logo" aria-label="Tony in the Game">
+                  <span className="tig-logo-tony">Tony</span>
+                  <span className="tig-logo-in">in the</span>
+                  <span className="tig-logo-game">Game</span>
+                </h1>
+              </div>
+
+              <div className="tig-hero-tony">
+                <div className="tig-hero-burst" aria-hidden="true" />
+                <img
+                  src="/tony/excited.png"
+                  alt="Animated Tony throws both fists in the air, ready to jump into the game"
+                  className="tig-pose"
+                />
+                <span className="tig-hero-callout">I'm in!</span>
+              </div>
+            </div>
+
+            <div className="tig-hero-footer">
+              <div>
+                <p className="text-lg font-black uppercase tracking-wide text-white md:text-2xl">{brand.promise}</p>
+                <p className="mt-2 max-w-2xl text-sm font-semibold leading-relaxed text-tigsky md:text-base">
+                  See what the player sees. Reveal what the game is doing. Then build it yourself.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
                 <Link to="/watch" className="tig-btn red">
                   <Play size={18} aria-hidden="true" />
-                  Watch the Show
+                  Start Episode 01
                 </Link>
                 <Link to="/about" className="tig-btn white">
                   Meet Tony
                 </Link>
               </div>
             </div>
-            <div className="relative mx-auto hidden max-w-xs lg:block">
-              <img src="/tony.png" alt="Tony, the show's animated presenter" className="tig-pose w-full drop-shadow-[0_14px_0_rgba(5,10,34,0.45)]" />
-              <p className="tig-blink mt-4 text-center text-xs font-black uppercase tracking-[0.3em] text-tigsky">
-                Press Start
-              </p>
-            </div>
+
+            <p className="tig-blink mt-6 text-center text-xs font-black uppercase tracking-[0.3em] text-tigsky">
+              Press Start
+            </p>
           </div>
         </div>
 

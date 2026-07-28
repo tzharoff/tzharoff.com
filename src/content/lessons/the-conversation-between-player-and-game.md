@@ -24,7 +24,7 @@ Every meaningful event in a game needs an answer the player can perceive:
 - **Interface** — a bar draining, an icon lighting up.
 - **World state** — the door is open now, and it stays open.
 
-Strong moments stack several channels at once. When you defeat an enemy in a great action game, you might get a flash *and* a sound *and* a brief hit stop *and* a score tick — four answers to one input.
+Strong moments stack several channels at once. When Tony collects a coin, it might spin and disappear *and* play a sound *and* update the counter *and* show a message—four answers to one interaction.
 
 ## This is what it costs
 
@@ -34,13 +34,13 @@ More feedback is not automatically better. Stack too much and the signal turns t
 
 ## This is how to recognize it
 
-Play thirty seconds of any game and mute it. What did you stop understanding? Now play with sound but look away during hits. Which channel was carrying the conversation?
+Open Tony's Feedback lesson scene and collect the coin. List every response you notice. Then mute the game and collect another coin. What did you stop understanding?
 
-In *Space Invaders*, removing enemies makes the remaining formation speed up. The escalating tempo isn't decoration — it's the game telling you, without a single word, that you are winning and the pressure is rising.
+Now disable the coin's message, animation, and counter update one at a time. The trigger and event can still work even when the player receives a weaker answer.
 
 ## Now you can build it
 
 - Search for **"game feel"**, **"juice"**, and **"hit stop"** to find implementation techniques in any engine.
 - When you prototype, add feedback *before* adding features. A plain cube that answers loudly teaches you more than a beautiful character that says nothing.
 
-**Exercise:** Pick one action in a game you love (a jump, a hit, a pickup). List every feedback channel it uses. Then imagine removing them one at a time — which removal kills the feeling first?
+**Exercise:** Collect a coin in Tony's Training Ground and list every feedback channel it uses. Disable them one at a time—which removal makes the interaction confusing first? Then add one new response that makes the collection clearer without making it noisy.

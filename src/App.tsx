@@ -15,6 +15,7 @@ import { NotesPage } from "./pages/NotesPage";
 import { QuestDetailPage } from "./pages/QuestDetailPage";
 import { QuestLogPage } from "./pages/QuestLogPage";
 import { SkillTreePage } from "./pages/SkillTreePage";
+import { TeachingSamplePage } from "./pages/TeachingSamplePage";
 import { WatchPage } from "./pages/WatchPage";
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/learn" element={<LearnPage />} />
         <Route path="/learn/lessons" element={<LessonsPage />} />
         <Route path="/learn/lessons/:slug" element={<LessonPage />} />
+        <Route path="/learn/teaching-sample" element={<TeachingSamplePage />} />
         <Route path="/build" element={<BuildPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/about" element={<AboutPage />} />

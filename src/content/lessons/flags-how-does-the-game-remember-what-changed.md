@@ -14,7 +14,7 @@ An event announces that something just happened. Then the moment is over.
 
 But games need to remember things.
 
-Has the player collected the key? Is the door unlocked? Did the tutorial already play? Is the player standing inside the trigger? Has this Question Mark Block already been used?
+Has Tony collected the key? Is the door unlocked? Did the tutorial already play? Is Tony standing inside the trigger? Has the checkpoint been activated?
 
 A **flag** stores a yes-or-no answer.
 
@@ -24,20 +24,20 @@ In code, that kind of value is usually called a **boolean**. It has two possible
 
 ## This is how it works
 
-Let's go back to Mario and the Question Mark Block.
+Let's put a key and a locked door in Tony's Training Ground.
 
 At the beginning, we can imagine the block storing a flag:
 
-`block_has_been_used = false`
+`tony_has_key = false`
 
-Mario punches the block. The collision raises an event, and the block's code responds:
+Tony walks through the key's trigger. The collection event is raised, and the listening code responds:
 
-1. Check whether `block_has_been_used` is false.
-2. Release the power-up.
-3. Change the block's appearance.
-4. Set `block_has_been_used = true`.
+1. Collect the key.
+2. Set `tony_has_key = true`.
+3. Remove the key from the world.
+4. Show Tony that something changed.
 
-When Mario punches the block again, the collision can still happen and the event can still run. But now the rule checks the flag, sees that the block has already been used, and does not release another power-up.
+When Tony reaches the door, its rule checks the flag. If `tony_has_key` is false, the door stays locked. If it is true, the door opens.
 
 The event is over. The flag remains.
 
@@ -47,7 +47,7 @@ Flags give rules something simple to check.
 
 They can remember something that is true **while** an interaction is happening:
 
-`player_is_inside_water = true`
+`tony_is_inside_water = true`
 
 They can remember something that happened **once**:
 
@@ -55,11 +55,11 @@ They can remember something that happened **once**:
 
 They can remember something that stays true **until** another event changes it:
 
-`ghosts_are_vulnerable = true`
+`speed_boost_is_active = true`
 
-When the Power Pellet timer ends, another event can set that flag back to false.
+When Tony's speed-boost timer ends, another event can set that flag back to false.
 
-Flags let events affect rules that run later. The code controlling ghost behavior doesn't need to watch Pac-Man eat the Power Pellet. It can check whether `ghosts_are_vulnerable` is currently true.
+Flags let events affect rules that run later. The door does not need to watch Tony collect the key. It only needs to check whether `tony_has_key` is currently true.
 
 ## This is how to recognize it
 
@@ -87,15 +87,15 @@ You cannot see the flag itself, but you can observe the game remembering its val
 
 Flags are especially useful when a game needs to remember whether something is inside a trigger:
 
-`player_is_inside = false`
+`tony_is_inside = false`
 
 The enter event can change it:
 
-`player_is_inside = true`
+`tony_is_inside = true`
 
 The exit event can change it back:
 
-`player_is_inside = false`
+`tony_is_inside = false`
 
 Other rules can now check the flag without needing to wait for another trigger event.
 
@@ -121,22 +121,22 @@ Then turn it into a name that can be true or false:
 
 - `door_is_unlocked`
 - `checkpoint_is_active`
-- `player_has_key`
+- `tony_has_key`
 - `tutorial_has_played`
 
 A clear flag name makes the rule easier to read because it tells Future You exactly what question the code is answering.
 
 ## Exercise: Find what the game remembers
 
-Choose one object or interaction in a game that has two clear states.
+Open Tony's Flags lesson scene and test the locked door before collecting the key. Then collect the key and return to the door.
 
 Write down:
 
-1. **The question:** What does the game need to remember?
-2. **The flag:** What would you name its true-or-false value?
-3. **The starting value:** Is it true or false at the beginning?
-4. **The event:** What changes the flag?
-5. **The rule:** What behaves differently after it changes?
-6. **The reset:** Does anything change it back?
+1. **The question:** Does Tony have the key?
+2. **The flag:** Find the true-or-false value storing the answer.
+3. **The starting value:** Confirm that it begins false.
+4. **The event:** Collect the key and watch the value change.
+5. **The rule:** Test how the door behaves when the flag is true.
+6. **The experiment:** Reset the flag to false and try the door again.
 
 You are taking something the game remembers and turning it into a question code can answer.

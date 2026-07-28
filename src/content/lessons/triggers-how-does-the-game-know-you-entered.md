@@ -22,38 +22,38 @@ The player might walk straight through it and never know the area was there.
 
 Triggers can open doors, collect items, start dialogue, activate checkpoints, change music, begin boss fights, reveal tutorials, or move the player into another part of the game.
 
-> [pose: thinking]The trigger isn't a wall. It's the game saying, **"Something important just entered this space."**
+> [pose: thinking] The trigger isn't a wall. It's the game saying, **"Something important just entered this space."**
 
 ## This is how it works
 
-Let's look at *Pac-Man*.
+Let's look at Tony in the Training Ground.
 
-When Pac-Man reaches a wall, he stops. That wall gives us a collision with a physical response: Pac-Man cannot move through it.
+When Tony reaches a wall, he stops. The wall's collider creates a physical response: Tony cannot move through it.
 
-When Pac-Man reaches a pellet, he does not stop or bounce away. He keeps moving. The pellet disappears, the score changes, and the game gives us sound and visual feedback.
+Now Tony jumps off a platform. He falls through an invisible Respawn Zone beneath the level. The zone does not catch him or bounce him away. It notices that Tony entered, then returns him to the starting point.
 
-The pellet interaction is doing a different job:
+The Respawn Zone is doing a different job:
 
-1. Pac-Man enters the pellet's space.
+1. Tony enters the zone's space.
 2. The game detects an **overlap**.
 3. That overlap creates an **event**.
 4. A rule decides what the event means.
-5. The pellet is removed and the score increases.
-6. The game shows and plays feedback so the player knows it happened.
+5. Tony moves back to the respawn point.
+6. The camera and visual feedback help the player understand what happened.
 
-The pellet did not need to block Pac-Man. It only needed to know that Pac-Man reached it.
+The zone did not need to block Tony. It only needed to know that Tony reached it.
 
-> [pose: proud] A wall says, "You can't go through me." A pellet says, "You reached me—now make something happen!"
+> [pose: proud] A wall says, "You can't go through me." A trigger says, "You reached me—now make something happen!"
 
-We can also see this at the tunnels on the sides of the maze. Pac-Man crosses the edge of one tunnel and appears at the other. The important part isn't bumping into a solid object. The important part is entering a location that tells the game to do something.
+We can use the same idea for a coin. Tony passes through the coin's trigger, the game notices the overlap, and the coin is collected without physically stopping him.
 
 ### One important note
 
-The original *Pac-Man* was not built with a modern engine's "Trigger" component. Its programmers could check Pac-Man's position on the maze grid and run the same kind of rule.
+In Unity, a trigger still uses a Collider component, but **Is Trigger** is turned on. That tells the physics system to report overlaps without using that collider as a solid barrier.
 
-We are using **trigger** to describe the job: notice that something reached an important place without physically stopping it.
+Other engines use different components and names to do the same job: notice that something reached an important place without physically stopping it.
 
-> [pose: whisper] A trigger area is one way a modern game engine can do that job.
+> [pose: whisper] The box under the level is invisible to the player, but it isn't invisible to the engine.
 
 ## This is why games use it
 
@@ -135,17 +135,17 @@ Once you can say that clearly, you know what to search for and what event your r
 
 ## Exercise: Find the invisible area
 
-Choose a game and find one moment that seems to use a trigger: collecting an item, entering a room, activating a checkpoint, starting dialogue, or changing areas.
+Open Tony's Trigger lesson scene and turn on the Respawn Zone's visible guide so you can see the area the player normally cannot.
 
 Write down:
 
-1. **The object:** What entered the area?
-2. **The area:** Where do you think the trigger begins and ends?
-3. **The event:** Did the object enter, stay, or exit?
-4. **The condition:** Did anything else need to be true?
-5. **The rule:** What happened because the trigger activated?
-6. **The feedback:** How did the game tell you it happened?
+1. Make Tony jump into the zone and watch him respawn.
+2. Move the zone lower and test it again.
+3. Make the zone smaller and try to fall past it.
+4. Turn **Is Trigger** off and see how the behavior changes.
+5. Turn it back on and restore the original size.
+6. Write down what the trigger detected and what rule ran afterward.
 
-Now test your theory. Approach from another direction, leave and return, or try it with a different object if the game allows it.
+Then walk Tony through a coin pickup and compare the two triggers. They detect the same kind of overlap, but their rules produce different results.
 
 You may never see the trigger itself, but you can still gather evidence about where it is and how it works.

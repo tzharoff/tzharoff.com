@@ -39,7 +39,7 @@ What changed is called the **game state**. That can be something obvious, like y
 
 But the game isn't the only thing changing. **You are changing too.**
 
-Every time the game responds, you learn a little more about how it works. You press a button and learn that it makes Mario jump. You hit a Question Mark Block and something comes out. The block changes, so you learn that you probably can't use it again.
+Every time the game responds, you learn a little more about how it works. You press a button and learn that it makes Tony move. You press another and learn that he can jump. You run into a wall and learn that the world has boundaries.
 
 That understanding in your head is called a **mental model**. It's your current idea of what the game's rules are—even if the game never explains those rules out loud.
 
@@ -68,7 +68,7 @@ We're taking a feeling—"this seems broken"—and turning it into questions we 
 
 ## This is how to recognize it
 
-Boot up anything—*Super Mario Bros.*, a match-three game on your phone, *Elden Ring*—and narrate one small moment out loud:
+Press Play in Tony's Training Ground and narrate one small moment out loud:
 
 - What did I just notice?
 - What input did I give?
@@ -77,23 +77,24 @@ Boot up anything—*Super Mario Bros.*, a match-three game on your phone, *Elden
 - How did the game tell me?
 - What did I learn?
 
-Let's look at Mario and a Question Mark Block.
+Let's make Tony walk toward a wall.
 
-Mario stands underneath the block and jumps. He punches it, the block bumps upward, a sound plays, and a power-up comes out.
+You see the wall and press the movement input. Tony moves forward until he reaches it, then stops.
 
-> [pose: excited] I always thought Mario hit the block with his head! Then I looked at the sprite sheet and saw his fist raised—he punches it. Sometimes looking at a game like a developer means questioning something you thought you already knew.
+That tiny moment gives us the whole loop. The player sees the world and decides to move. Unity reads the input. Tony's movement system changes his position. His collider reaches the wall's collider, and the rules stop him from moving through it. Tony stopping at the wall shows the player that the space has a boundary.
 
-That one moment gives us the whole loop. The shiny Question Mark Block catches the player's attention and practically asks to be touched. The player decides to jump. The game detects that Mario touched the block. Its rules say that this block can release something, so the block changes from unused to used and the power-up appears. The animation and sound tell the player that their action worked.
+Now disable the wall's collider and try again. Tony walks through the same visible wall. Your input did not change. Tony's model did not change. The rule controlling the boundary changed.
 
-Mario touched something, but the collision was only the beginning. **The game's rules decided what that contact caused.**
+That difference gives us something we can investigate inside the engine.
 
-Collision tells the game that Mario touched the block. The rules turn that collision into a reward.
+> [pose: excited] This is why we're bringing Tony with us. We can play the interaction, open the engine, change one piece, and see exactly what that piece was doing!
 
 We're getting into movement and collision here, and we'll dig much deeper into both later. For now, notice that we can separate what we saw from what we think the game is doing:
 
-- **What we saw:** Mario hit the block, it bumped upward, and a power-up appeared.
-- **What we think happened:** The collision activated a rule that changed the block and created the reward.
-- **What we can research:** How does a game detect that something touched a block and make an item appear?
+- **What we saw:** Tony moved forward and stopped at the wall.
+- **What we found:** Two colliders created a physical boundary.
+- **What we tested:** Disabling the wall's collider let Tony pass through it.
+- **What we can research:** How do different engines create physical boundaries?
 
 That last question is where we start seeing the game as developers.
 
@@ -116,7 +117,7 @@ You aren't trying to memorize an engine yet. You're learning how to ask it the r
 
 ## Exercise: Catch the game in the act
 
-Choose a game you know and find one small interaction: jumping, opening a door, picking up an item, choosing a card, or attacking an enemy.
+Choose one small interaction in Tony's Training Ground: moving, jumping, hitting a wall, or falling off the platform.
 
 Write it as six short lines:
 

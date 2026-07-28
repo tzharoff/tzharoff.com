@@ -12,7 +12,7 @@ vocabulary: collider, collision, collision shape, boundary, collision response, 
 
 When two things touch in a game, how does the game know?
 
-It doesn't look at the screen the way we do. It isn't watching the ball hit the paddle and thinking, "Yep, those definitely touched."
+It doesn't look at the screen the way we do. It isn't watching Tony run into the wall and thinking, "Yep, those definitely touched."
 
 The game needs a simpler shape it can check. That shape is called a **collider**.
 
@@ -20,39 +20,38 @@ A collider is an invisible boundary attached to something in the game. It might 
 
 The picture you see and the shape the game checks are not always the same thing.
 
-> [pose: pointing-right] Wait... *Pong* is just rectangles hitting other rectangles? Yes! And that's exactly why it's so useful. We can see the whole collision system without a bunch of other stuff getting in the way.
+> [pose: pointing-right] Tony looks like a person, but the engine doesn't check every part of his model. A simple capsule around him does most of the work!
 
 ## This is how it works
 
-Let's look at *Pong*.
+Let's look at Tony in the Training Ground.
 
-We have a ball, two paddles, and the top and bottom edges of the play area. Each one can be represented by a simple collision shape.
+Tony has a capsule-shaped collider. The wall has a box-shaped collider. The models show us what Tony and the wall look like; the colliders tell Unity where their physical boundaries are.
 
-As the ball moves, the game keeps checking those shapes:
+As Tony moves toward the wall, the engine keeps checking those shapes:
 
-1. Where is the ball now?
-2. Where is it trying to move next?
-3. Does its collider touch another collider?
+1. Where is Tony now?
+2. Where is he trying to move next?
+3. Does his collider touch the wall's collider?
 4. If it does, what should happen?
 
-When the ball touches the top or bottom wall, it bounces.
+When Tony's capsule reaches the wall's box, the wall stops him from moving forward.
 
-When the ball touches a paddle, it bounces back toward the other player.
+Disable the wall's collider and try again. The wall still looks solid, but Tony walks straight through it. The artwork did not change. The invisible boundary did.
 
-The collision tells the game **that the shapes met**. A rule decides how the ball should respond.
+The collision tells the game **that the shapes met**. A rule decides how Tony should respond.
 
 That response is called a **collision response**. The game might stop something, bounce it, slide it along a surface, push it away, or run some other rule completely.
 
-In *Pong*, we can describe the whole moment like this:
+In the Training Ground, we can describe the whole moment like this:
 
-- The ball moves toward the paddle.
-- The ball's collider meets the paddle's collider.
+- Tony moves toward the wall.
+- Tony's collider meets the wall's collider.
 - The game detects the collision.
-- A rule changes the ball's direction.
-- The ball moves away from the paddle.
-- The game uses motion and sound to show that the hit happened.
+- A rule prevents Tony from moving through the wall.
+- Tony stops at the wall's boundary.
 
-The collision is the meeting. The bounce is the response.
+The collision is the meeting. Stopping Tony is the response.
 
 ## This is why games use it
 
@@ -80,14 +79,14 @@ A round character might use a circle. A person might use a capsule. A complicate
 
 You usually can't see colliders while playing, but you can look for evidence of them.
 
-Watch the ball in *Pong* as it reaches the edge of a paddle:
+Select Tony and the wall in Unity, then turn on collider visualization:
 
-- Does it bounce when the artwork appears to touch?
-- Can part of the ball overlap the paddle before it bounces?
-- Does hitting near the edge change the angle?
-- What happens when the ball moves very quickly?
+- Does Tony stop when the visible model reaches the wall?
+- Does the capsule extend beyond any part of Tony's body?
+- Does the wall's collider match its visible size?
+- What changes when you make either collider larger or smaller?
 
-Now imagine drawing invisible boxes around the ball, paddles, and walls. Where would you put them? Would they fit the artwork exactly, or would you make them a little larger or smaller?
+Now disable the wall's collider. The visible wall remains, but its physical boundary is gone. That is the difference between seeing the artwork and seeing the system.
 
 You can do this with any game. Watch where a character stops in front of a wall. Look at how close an attack needs to get before it counts as a hit. Notice when a platform catches the player's feet.
 
@@ -127,21 +126,19 @@ And what happens when we want the game to notice that something entered an area 
 
 > [pose: excited] That's where triggers come in! Let's get into those with the next lesson!
 
-## Exercise: Draw the invisible game
+## Exercise: Break the wall
 
-Watch a short round of *Pong* or play a version of it yourself.
+Open Tony's Collider lesson scene and run him into the wall.
 
-Pause during a rally and sketch the play area using only collision shapes:
+Then:
 
-1. Draw a shape for the ball.
-2. Draw shapes for both paddles.
-3. Draw the boundaries that make the ball bounce.
-4. Mark one place where a collision can happen.
-5. Write the rule that responds to that collision.
-6. Write down the feedback that tells the player it happened.
+1. Select Tony and find his collider.
+2. Select the wall and find its collider.
+3. Disable the wall's collider and walk through it.
+4. Re-enable it and confirm that Tony stops again.
+5. Make the collider wider than the wall and test where Tony stops.
+6. Make it smaller than the wall and find where Tony can slip through.
 
-Then choose one collider and change it. Make the paddle's collider wider, make the ball's collider smaller, or move a wall's boundary inward.
-
-What would the player see? What would feel easier, harder, strange, or unfair?
+What stayed visible? What changed about the rules of the space?
 
 You just changed the game without changing any of its artwork. That's the power of seeing the invisible shapes underneath it.

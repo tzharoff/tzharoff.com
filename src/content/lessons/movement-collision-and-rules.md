@@ -26,7 +26,7 @@ Collision and rules are different jobs, and confusing them is the most common be
 
 > [pose: thinking] Collisions tell the game that two things met. Rules tell the game what that meeting means.
 
-Mario touching a Goomba is *one collision event*. The rule asks a question about it — was Mario descending from above? — and produces *two completely different outcomes* from the same contact. The overlap has no meaning until a rule gives it one.
+Tony reaching a wall and Tony entering a Respawn Zone are both meetings between regions, but their rules create different results. The wall stops Tony. The Respawn Zone lets him pass through, then moves him back to safety. The meeting has no meaning until a rule gives it one.
 
 A **trigger** is collision's quieter sibling: a region that detects "the player is here" without physically stopping anything. Checkpoints, cutscene starts, pressure plates, the invisible box that makes enemies notice you — all triggers.
 
@@ -54,4 +54,4 @@ The vocabulary transfers everywhere:
 
 Different names, same three jobs: move, detect, decide.
 
-**Exercise:** In any game, find one contact that means two different things in different situations (like the Goomba). Write down the condition the rule must be checking to tell them apart.
+**Exercise:** Open Tony's completed Training Ground and trace two interactions: running into the wall and falling into the Respawn Zone. For each one, identify the movement, detection, event, listener, rule, state change, and feedback. Then change one piece and predict what Tony will do before pressing Play.

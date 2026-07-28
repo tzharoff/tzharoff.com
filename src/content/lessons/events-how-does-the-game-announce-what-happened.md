@@ -24,21 +24,21 @@ The engine might announce that a collision began, a trigger was entered, a butto
 
 ## This is how it works
 
-Let's return to the last two lessons.
+Let's return to Tony's Training Ground.
 
-In *Pong*:
+When Tony falls into the Respawn Zone:
 
-1. The ball's collider meets the paddle's collider.
-2. The engine detects the collision.
-3. A collision event is raised.
-4. Code responds by changing the ball's direction.
+1. Tony's collider enters the trigger.
+2. Unity detects the overlap.
+3. Unity calls the trigger code.
+4. The zone announces that Tony needs to respawn.
 
-In *Pac-Man*:
+When Tony collects a coin:
 
-1. Pac-Man overlaps a pellet.
-2. The game detects the overlap.
-3. A trigger event is raised.
-4. Code responds by removing the pellet and increasing the score.
+1. Tony overlaps the coin's trigger.
+2. Unity detects the overlap.
+3. The coin announces that it was collected.
+4. Other parts of the game get a chance to respond.
 
 The collision or trigger does the detecting. The event carries the news.
 
@@ -48,21 +48,21 @@ We can describe the complete path like this:
 
 Different tools use different words for the response. You might see **listener**, **handler**, **callback**, or **signal**. The names change, but the job is the same: run this code when that event happens.
 
-> [pose: adjusting-glasses] Keep in mind, the collisions and events are a modern idea for game engines, Pong and Pac-Man used these concepts before they had a name.
+> [pose: adjusting-glasses] Unity can tell us that Tony entered the trigger. We can turn that detection into a more useful announcement: "Tony collected a coin!"
 
 ## This is why games use it
 
 Events let one part of a game tell other parts what happened without doing every job itself.
 
-The paddle doesn't need to control sound, particles, scoring, tutorials, controller vibration, and every other possible response. It can announce that the ball hit it, and the systems that care can respond.
+The coin doesn't need to control sound, particles, scoring, tutorials, controller vibration, and every other possible response. It can announce that Tony collected it, and the systems that care can respond.
 
 One event might cause several things:
 
-- The ball changes direction.
+- The coin disappears.
 - A sound plays.
-- The controller vibrates.
-- A statistic counts the hit.
-- The paddle flashes.
+- The counter increases.
+- A message appears.
+- The collection is recorded.
 
 The announcement is one moment. The responses can come from many places.
 
@@ -84,7 +84,7 @@ Ask:
 - Did several responses happen at the same time?
 - What information would the responding code need?
 
-When a ball hits a paddle and you see a bounce, hear a sound, and watch the paddle flash, you may be looking at several systems responding to the same event.
+When Tony collects a coin and you see it disappear, hear a sound, and watch the counter increase, you may be looking at several systems responding to the same event.
 
 You don't need the source code to form a useful theory about the announcement connecting them.
 
@@ -112,13 +112,13 @@ That's where listeners come in.
 
 ## Exercise: Follow the announcement
 
-Choose one collision or trigger from a game and write down:
+Open Tony's Events lesson scene, collect the coin, and watch the event display.
 
-1. **What happened?**
-2. **What detected it?**
-3. **What event might be raised?**
-4. **What code needs to listen?**
-5. **What responses happen afterward?**
-6. **What information might the event need to carry?**
+1. **What happened?** Tony entered the coin trigger.
+2. **What detected it?** Identify the trigger component.
+3. **What event was raised?** Find the announcement in the Inspector.
+4. **What information did it carry?** Look for the coin or player reference.
+5. **What responses happened afterward?** List everything you saw and heard.
+6. **What changed when you disabled the event?** Test it and compare.
 
 You are tracing the path from something happening in the game world to the code that decides what happens next.
