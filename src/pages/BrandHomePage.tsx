@@ -71,6 +71,7 @@ export function BrandHomePage() {
                   alt="Animated Tony throws both fists in the air, ready to jump into the game"
                   className="tig-pose"
                 />
+                <div className="tig-hero-rim" aria-hidden="true" />
                 <span className="tig-hero-callout">I'm in!</span>
               </div>
             </div>

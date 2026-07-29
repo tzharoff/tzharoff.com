@@ -1442,7 +1442,9 @@ footer {
   z-index: 2;
   width: min(100%, 355px);
   image-rendering: auto;
+  clip-path: inset(0 0 12px);
   filter: drop-shadow(0 12px 0 rgba(5, 10, 34, 0.48));
+  transform: translateY(8px);
 }
 
 .tig-hero-burst {
@@ -1456,9 +1458,21 @@ footer {
   transform: rotate(7deg);
 }
 
-.tig-hero-callout {
+.tig-hero-rim {
   position: absolute;
   z-index: 3;
+  pointer-events: none;
+  inset: 7% -5% 0;
+  border: 7px solid #f8faff;
+  border-radius: 45% 55% 46% 54%;
+  clip-path: inset(58% -16px -16px -16px);
+  filter: drop-shadow(0 9px 0 rgba(5, 10, 34, 0.55));
+  transform: rotate(7deg);
+}
+
+.tig-hero-callout {
+  position: absolute;
+  z-index: 4;
   top: 4%;
   right: -2%;
   transform: rotate(8deg);
