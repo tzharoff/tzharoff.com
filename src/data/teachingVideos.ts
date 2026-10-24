@@ -1,0 +1,53 @@
+export type TeachingVideo = { slug: string; title: string; description: string; duration: number; credit: string | null };
+
+export const teachingVideos: TeachingVideo[] = [
+  {
+    "slug": "overview",
+    "title": "Technical instructor portfolio",
+    "description": "A brief introduction to the longer teaching examples in this collection.",
+    "duration": 89,
+    "credit": null
+  },
+  {
+    "slug": "technical-explanation",
+    "title": "Making technical concepts clear",
+    "description": "Compare familiar and compact syntax, explain an engine-specific requirement, and connect code with visual scripting.",
+    "duration": 192,
+    "credit": null
+  },
+  {
+    "slug": "learner-questions",
+    "title": "Teaching through learner questions",
+    "description": "Preserve the question and response: clarify the assignment, then adapt presentation expectations to learners' needs.",
+    "duration": 140,
+    "credit": null
+  },
+  {
+    "slug": "debugging",
+    "title": "Debugging: test, diagnose, retest",
+    "description": "Show the working win condition, wire up the loss panel, encounter an immediate loss, correct the comparison, and retest.",
+    "duration": 184,
+    "credit": null
+  },
+  {
+    "slug": "responsive-facilitation",
+    "title": "Let learners shape the activity",
+    "description": "Invite critique of a worksheet, listen to a challenge, and incorporate a learner-proposed question.",
+    "duration": 238,
+    "credit": "Learner ideas remain credited to their speakers."
+  },
+  {
+    "slug": "lesson-to-project",
+    "title": "From instruction to learner project",
+    "description": "Connect documentation guidance with a later learner showcase and design feedback.",
+    "duration": 293,
+    "credit": "Game design and prototype by the presenting learner team."
+  },
+  {
+    "slug": "curriculum-sequence",
+    "title": "Designing a learning sequence",
+    "description": "A reconstruction of the recorded project phase: analysis, prototyping, milestones, review and presentation practice.",
+    "duration": 123,
+    "credit": "Reconstructed from recorded instruction; not the original written syllabus."
+  }
+];

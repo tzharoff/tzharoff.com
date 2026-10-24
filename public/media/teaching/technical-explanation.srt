@@ -1,0 +1,147 @@
+1
+00:00:05,600 --> 00:00:12,880
+Sink transforms. You're probably asking yourself. Why why do we need this? What does physics dot sync transforms do?
+
+2
+00:00:13,120 --> 00:00:17,520
+Since we're using a character control for movement. We need to
+
+3
+00:00:18,440 --> 00:00:22,280
+Tell unity that that character controller needs to be moved
+
+4
+00:00:23,080 --> 00:00:27,320
+Otherwise if we don't add this line our character will not move in the game
+
+5
+00:00:29,760 --> 00:00:32,720
+Right here, this is a if statement
+
+6
+00:00:32,720 --> 00:00:35,520
+where we're checking for the speed, right?
+
+7
+00:00:37,200 --> 00:00:42,200
+So another way to write this, if input dot git key code,
+
+8
+00:00:44,840 --> 00:00:51,920
+git key key code dot left shift.
+
+9
+00:00:53,480 --> 00:01:01,340
+There we go, equals true,
+
+10
+00:01:01,340 --> 00:01:09,220
+then current speed equals front speed, else.
+
+11
+00:01:12,170 --> 00:01:15,170
+So if the key is up or any instance
+
+12
+00:01:15,170 --> 00:01:17,130
+where the key is not doing anything,
+
+13
+00:01:17,130 --> 00:01:21,290
+then we're gonna say our current speed equals move speed.
+
+14
+00:01:22,330 --> 00:01:24,170
+There we go.
+
+15
+00:01:24,170 --> 00:01:27,530
+This is the exact same way, they're written the exact same way.
+
+16
+00:01:27,530 --> 00:01:34,270
+The only difference here is that this one
+
+17
+00:01:34,270 --> 00:01:36,590
+is multiple line versus this one is single line.
+
+18
+00:01:36,590 --> 00:01:39,190
+That's what this question mark is right here.
+
+19
+00:01:39,190 --> 00:01:41,990
+So this is the if statement right here.
+
+20
+00:01:41,990 --> 00:01:46,990
+If this is true, then current speed
+
+21
+00:01:47,430 --> 00:01:49,470
+will be sent to run speed and all that.
+
+22
+00:01:49,470 --> 00:01:49,520
+Again, it might be a little bit more,
+
+23
+00:01:51,920 --> 00:02:01,070
+So this code right here is the exact same as this flow graph that we've created over here
+
+24
+00:02:02,470 --> 00:02:04,470
+Right
+
+25
+00:02:04,790 --> 00:02:12,110
+Just so we can see this is our input and this is the right of our transform again, that's right here
+
+26
+00:02:12,470 --> 00:02:16,070
+This is our input. This is the forward of our transform
+
+27
+00:02:16,950 --> 00:02:20,870
+Which we have right here. We're gonna multiply these values together
+
+28
+00:02:21,990 --> 00:02:23,990
+again, this is a much more
+
+29
+00:02:25,190 --> 00:02:28,190
+verbose version than what I would typically write for myself
+
+30
+00:02:29,750 --> 00:02:32,910
+But again, I'm trying to show the correlation here between
+
+31
+00:02:33,630 --> 00:02:38,910
+What it will look like when you're writing in code versus what you're doing it in bold because at this point
+
+32
+00:02:39,230 --> 00:02:42,990
+You're gonna kind of have the choice to go either direction
+
+33
+00:02:42,990 --> 00:02:49,150
+Right and I want you to be able to look at code and then I want you to be able to translate that to bold and vice versa because
+
+34
+00:02:49,470 --> 00:02:51,950
+Not everyone is as comfortable writing code
+
+35
+00:02:52,710 --> 00:03:00,950
+It's something that you know a lot of us have done for a very long time versus some people who don't have experience with it
+
+36
+00:03:00,950 --> 00:03:04,790
+So whatever you feel most comfortable with is what I want you to go with
+
+37
+00:03:04,790 --> 00:03:08,630
+I just want to show you kind of both ways and what it'll look like, right?

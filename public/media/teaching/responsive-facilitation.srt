@@ -1,0 +1,283 @@
+1
+00:00:05,640 --> 00:00:07,720
+I'm going to share my screen.
+
+2
+00:00:09,000 --> 00:00:13,850
+So we kind of go over this process, right?
+
+3
+00:00:13,850 --> 00:00:16,010
+So I'm making another spreadsheet.
+
+4
+00:00:16,010 --> 00:00:18,970
+This can be very similar, but this one will be based around mechanics.
+
+5
+00:00:18,970 --> 00:00:29,130
+So let's talk about breath of the wild and the gliding mechanics.
+
+6
+00:00:29,130 --> 00:00:33,290
+So I just want to make sure that these questions are clear,
+
+7
+00:00:33,290 --> 00:00:36,250
+and if they kind of help you guys understand mechanics better,
+
+8
+00:00:36,250 --> 00:00:37,770
+if you have a better way to praise these,
+
+9
+00:00:37,770 --> 00:00:39,610
+or you have different questions in general,
+
+10
+00:00:39,610 --> 00:00:41,290
+by all means, please speak up.
+
+11
+00:00:43,210 --> 00:00:44,200
+This is for feedback.
+
+12
+00:00:46,600 --> 00:00:50,420
+Okay, so how would you recreate this manic?
+
+13
+00:00:50,420 --> 00:00:52,500
+So I think this is kind of a logic side, right?
+
+14
+00:00:52,500 --> 00:00:53,220
+This is how.
+
+15
+00:00:55,380 --> 00:00:58,020
+Okay, so I like this because how does the mechanic work?
+
+16
+00:00:58,020 --> 00:01:00,820
+And then how would you recreate this mechanic, right?
+
+17
+00:01:00,820 --> 00:01:01,780
+Does this question work?
+
+18
+00:01:01,780 --> 00:01:02,820
+Or is there something else?
+
+19
+00:01:03,380 --> 00:01:04,740
+How do you visualize the mechanic?
+
+20
+00:01:04,740 --> 00:01:04,980
+Okay.
+
+21
+00:01:05,540 --> 00:01:12,740
+No, I don't see any difference between how would you recreate and how does the mechanic work?
+
+22
+00:01:14,740 --> 00:01:17,060
+I will make it the way it works.
+
+23
+00:01:18,580 --> 00:01:23,060
+Okay, so when you're saying recreate, it means like you're just redoing it.
+
+24
+00:01:23,620 --> 00:01:27,860
+But what you're trying to say is like you wanted to do it in a different
+
+25
+00:01:27,860 --> 00:01:28,100
+way.
+
+26
+00:01:30,100 --> 00:01:31,860
+Okay, so this is ambiguous too.
+
+27
+00:01:31,860 --> 00:01:32,340
+That's good.
+
+28
+00:01:33,060 --> 00:01:34,100
+This is great feedback.
+
+29
+00:01:34,100 --> 00:01:34,580
+I like this.
+
+30
+00:01:35,540 --> 00:01:36,740
+So how does the mechanic work?
+
+31
+00:01:36,740 --> 00:01:41,380
+I see, yeah, these are very similar because it seems like you guys
+
+32
+00:01:41,380 --> 00:01:44,900
+ended up answering this question with this question.
+
+33
+00:01:44,900 --> 00:01:46,660
+So that makes this question redundant.
+
+34
+00:01:46,660 --> 00:01:54,500
+So what would be a third question based on game mechanics then?
+
+35
+00:01:55,460 --> 00:02:03,460
+A different approach to the mechanic making us think outside the box, I guess.
+
+36
+00:02:05,300 --> 00:02:10,580
+So instead of using gravity to lower ourselves, you use something else.
+
+37
+00:02:10,580 --> 00:02:16,580
+We just add force, it will work, but it's a different way.
+
+38
+00:02:18,420 --> 00:02:24,100
+How would you solve the same problem with a different mechanic?
+
+39
+00:02:25,460 --> 00:02:29,620
+Yeah, basically using a different mechanic for the same.
+
+40
+00:02:32,350 --> 00:02:33,310
+Ooh, I like that.
+
+41
+00:02:33,310 --> 00:02:33,870
+Okay.
+
+42
+00:02:33,870 --> 00:02:36,830
+How would you solve the same problem with a different mechanic?
+
+43
+00:02:36,830 --> 00:02:39,230
+That's a good, that's a good thinker.
+
+44
+00:02:39,230 --> 00:02:42,830
+Okay, I like that.
+
+45
+00:02:42,830 --> 00:02:44,670
+Okay, it was a primary purpose of the mechanic.
+
+46
+00:02:44,670 --> 00:02:46,910
+So that loops back around to the first question.
+
+47
+00:02:47,790 --> 00:02:52,350
+Because then, okay, so if we know the primary purpose of the mechanic is to
+
+48
+00:02:52,350 --> 00:02:57,150
+reduce fall speed, how would we solve the, how would we solve reducing the fall speed
+
+49
+00:02:57,150 --> 00:02:59,070
+without using a glide mechanic?
+
+50
+00:02:59,070 --> 00:03:03,870
+Maybe the character would have spring boots to reduce the fall damage,
+
+51
+00:03:03,870 --> 00:03:06,990
+so they would still fall, but the damage would be reduced.
+
+52
+00:03:09,390 --> 00:03:12,750
+To get to other areas, I don't know, maybe they have like a zip-line gun,
+
+53
+00:03:12,750 --> 00:03:15,230
+so they can shoot an area and then zip-line down.
+
+54
+00:03:15,230 --> 00:03:17,310
+It wouldn't work going up, it only worked going down.
+
+55
+00:03:18,110 --> 00:03:18,750
+But, okay.
+
+56
+00:03:18,750 --> 00:03:21,390
+Well, there's like, gazers or what were called the geysers.
+
+57
+00:03:21,390 --> 00:03:23,150
+The ones that have shoot up air.
+
+58
+00:03:23,150 --> 00:03:23,790
+Geysers, yeah.
+
+59
+00:03:24,350 --> 00:03:25,150
+Geysers, yeah.
+
+60
+00:03:25,710 --> 00:03:26,190
+Okay.
+
+61
+00:03:27,070 --> 00:03:32,590
+Maybe the character can have a ground pound attack that eliminates damage.
+
+62
+00:03:33,390 --> 00:03:34,350
+Yeah, yeah.
+
+63
+00:03:34,350 --> 00:03:39,950
+Like warriors and wow, how they have the heroic leap.
+
+64
+00:03:39,950 --> 00:03:44,270
+And if you time that when you're in the air, you end up not taking any fall damage.
+
+65
+00:03:44,270 --> 00:03:44,590
+Okay.
+
+66
+00:03:45,710 --> 00:03:46,590
+I like this.
+
+67
+00:03:46,590 --> 00:03:46,910
+Okay.
+
+68
+00:03:47,710 --> 00:03:49,310
+So this feels pretty solid.
+
+69
+00:03:50,350 --> 00:03:52,110
+Primary purpose, how does the mechanic work?
+
+70
+00:03:52,110 --> 00:03:53,550
+How would you solve the same problem?
+
+71
+00:03:53,550 --> 00:03:54,800
+Oh, this is going to be fun.

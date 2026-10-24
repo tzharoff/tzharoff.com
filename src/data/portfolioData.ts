@@ -67,6 +67,7 @@ export type SkillNode = {
 
 export const navItems = [
   { label: "Main Menu", href: "/portfolio", Icon: Compass },
+  { label: "Teaching", href: "/portfolio/teaching", Icon: GraduationCap },
   { label: "Quest Log", href: "/portfolio/quest-log", Icon: ScrollText },
   { label: "Skill Tree", href: "/portfolio/skill-tree", Icon: TreePine },
   { label: "Codex", href: "/portfolio/codex", Icon: BookOpen },

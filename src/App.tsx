@@ -16,6 +16,7 @@ import { QuestDetailPage } from "./pages/QuestDetailPage";
 import { QuestLogPage } from "./pages/QuestLogPage";
 import { SkillTreePage } from "./pages/SkillTreePage";
 import { TeachingSamplePage } from "./pages/TeachingSamplePage";
+import { TeachingVideosPage } from "./pages/TeachingVideosPage";
 import { WatchPage } from "./pages/WatchPage";
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       </Route>
       <Route element={<PortfolioLayout />}>
         <Route path="/portfolio" element={<HomePage />} />
+        <Route path="/portfolio/teaching" element={<TeachingVideosPage />} />
         <Route path="/portfolio/quest-log" element={<QuestLogPage />} />
         <Route path="/portfolio/quest-log/:slug" element={<QuestDetailPage />} />
         <Route path="/portfolio/skill-tree" element={<SkillTreePage />} />

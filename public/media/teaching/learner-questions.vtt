@@ -1,0 +1,106 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:07.520
+I have a question about today.
+
+00:00:08.320 --> 00:00:11.600
+So we're currently just the core mechanic.
+
+00:00:13.520 --> 00:00:16.320
+So there are two assignments today.
+
+00:00:18.080 --> 00:00:20.240
+We create a core mechanic and a working prototype.
+
+00:00:20.240 --> 00:00:23.440
+Now I'm trying to figure out what's the difference.
+
+00:00:25.200 --> 00:00:28.000
+Are you saying a working prototype for the core mechanic, right?
+
+00:00:28.000 --> 00:00:28.800
+Yes, yeah.
+
+00:00:28.800 --> 00:00:31.520
+So I mean, kind of think of it like
+
+00:00:32.400 --> 00:00:34.320
+you're going to design out the core mechanic
+
+00:00:34.320 --> 00:00:37.280
+and kind of figure out the logic and flow of it.
+
+00:00:37.280 --> 00:00:38.480
+And then you're actually going to build it.
+
+00:00:39.840 --> 00:00:40.640
+Okay.
+
+00:00:41.200 --> 00:00:46.240
+Oh, like that way you think about it before you build it.
+
+00:00:46.240 --> 00:00:48.400
+So you're not like building it and then changing your mind
+
+00:00:48.400 --> 00:00:50.000
+while you're building it like I do all the time.
+
+00:00:52.240 --> 00:00:55.680
+Because that's not a very productive method for development.
+
+00:00:55.680 --> 00:00:57.520
+It works great when you're dinking around,
+
+00:00:57.520 --> 00:00:59.920
+but for larger scale things,
+
+00:00:59.920 --> 00:01:02.640
+you want to plan it out and write it out before you build it.
+
+00:01:04.160 --> 00:01:04.800
+Got it.
+
+00:01:04.800 --> 00:01:05.120
+Yeah.
+
+00:01:05.120 --> 00:01:07.600
+Kind of like when we were talking about the game manager,
+
+00:01:07.600 --> 00:01:09.920
+scene manager player character,
+
+00:01:09.920 --> 00:01:13.600
+but ideally for this, you should just be worried about the player character.
+
+00:01:13.600 --> 00:01:15.280
+You can implement the other stuff later.
+
+00:01:17.700 --> 00:01:19.860
+Does anyone have any questions?
+
+00:01:19.860 --> 00:01:33.780
+Yes, Mr. Tony. The demo, is it a video or a showcase in the gameplay?
+
+00:01:35.460 --> 00:01:40.660
+Whichever you're most comfortable with. I'm not going to require one way or the other.
+
+00:01:41.460 --> 00:01:46.260
+If you end up wanting to do a demo, if you would rather do a video than play in front of people,
+
+00:01:46.340 --> 00:01:50.820
+then show that off. I don't know if you guys watch any of the E3 things.
+
+00:01:50.820 --> 00:01:56.020
+They do it however they want. There's some cases where they do a live gameplay demo.
+
+00:01:56.020 --> 00:02:02.100
+There's some cases where they just do a recorded video demo, stuff like that.
+
+00:02:04.820 --> 00:02:09.460
+If you're doing a gameplay demo, I'd recommend trying to make a build of it rather than running
+
+00:02:09.460 --> 00:02:13.620
+it from the editor itself and having it loaded in the background ready to go.
+
+00:02:17.140 --> 00:02:17.180
+Thank you. Yeah, no problem.

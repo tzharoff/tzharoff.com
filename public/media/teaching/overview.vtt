@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:04.800 --> 00:00:13.950
+So this code right here is the exact same as this flow graph that we've created over here
+
+00:00:16.400 --> 00:00:19.600
+Now I'm trying to figure out what's the difference.
+
+00:00:21.360 --> 00:00:24.160
+Are you saying a working prototype for the core mechanic, right?
+
+00:00:24.160 --> 00:00:24.960
+Yes, yeah.
+
+00:00:24.960 --> 00:00:27.680
+So I mean, kind of think of it like
+
+00:00:28.560 --> 00:00:30.480
+you're going to design out the core mechanic
+
+00:00:30.480 --> 00:00:33.440
+and kind of figure out the logic and flow of it.
+
+00:00:33.440 --> 00:00:34.640
+And then you're actually going to build it.
+
+00:00:36.000 --> 00:00:36.800
+Okay.
+
+00:00:38.400 --> 00:00:40.880
+This would be in our score manager
+
+00:00:41.680 --> 00:00:48.640
+Greater than or equal to we want to be less than or equal to zero good catch guys. I'm glad you guys pointed it out
+
+00:00:49.840 --> 00:00:53.450
+So we're gonna hit play
+
+00:00:53.450 --> 00:00:56.250
+So we check our health is down to two
+
+00:00:56.730 --> 00:00:58.730
+one
+
+00:01:01.200 --> 00:01:03.200
+You lost oh
+
+00:01:04.800 --> 00:01:10.480
+How would you solve the same problem with a different mechanic?
+
+00:01:11.840 --> 00:01:16.000
+Yeah, basically using a different mechanic for the same.
+
+00:01:18.730 --> 00:01:19.690
+Ooh, I like that.
+
+00:01:19.690 --> 00:01:20.250
+Okay.
+
+00:01:20.250 --> 00:01:23.210
+How would you solve the same problem with a different mechanic?
+
+00:01:23.210 --> 00:01:25.610
+That's a good, that's a good thinker.
